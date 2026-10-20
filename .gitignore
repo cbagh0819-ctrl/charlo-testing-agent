@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.bak
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Databases & Local History
+*.db
+*.sqlite3
+scan_history.db
+
+# IDEs & OS specific
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Ad-hoc audit exports
+*.patch
+*.diff
+*.html
+!docs/**/*.html
+CHARLO_Security_Report.html
+CHARLO_Security_Data.json
+CHARLO_Security_Report.sarif
