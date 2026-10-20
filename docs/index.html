@@ -3,29 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHARLO Testing Agent | AI-Powered Security, QA & Remediation Workstation</title>
-  <meta name="description" content="Autonomous cybersecurity and QA testing workstation for Windows, Android, and Web applications. 18 specialized testing engines, AST auto-patching, live PoC sandbox runner, and OASIS SARIF 2.1.0 compliance.">
+  <title>CHARLO Testing Agent | Autonomous Security, QA & Automated Remediation Workstation</title>
+  <meta name="description" content="Autonomous cybersecurity and QA testing workstation for Windows binaries, Android APKs, and Web applications. 18 specialized testing engines, AST code auto-patching, live PoC exploit sandbox, and OASIS SARIF 2.1.0 compliance.">
+  <meta name="keywords" content="cybersecurity, pentesting, QA automation, vulnerability scanner, AST auto-patcher, SARIF 2.1.0, android decompiler, windows pe mitigations, owasp top 10, playwright, k6">
+  <meta name="author" content="cbagh0819-ctrl">
+
+  <!-- OpenGraph / Social Metadata -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cbagh0819-ctrl.github.io/charlo-testing-agent/">
+  <meta property="og:title" content="CHARLO Testing Agent | Autonomous Cybersecurity & QA Workstation">
+  <meta property="og:description" content="18 specialized engines, AST code auto-patching, live PoC sandbox runner, and OASIS SARIF 2.1.0 compliance. 100% offline and privacy-first.">
+  <meta property="og:image" content="assets/snap_verified_homepage.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CHARLO Testing Agent | Autonomous Cybersecurity & QA Workstation">
+  <meta name="twitter:description" content="18 specialized engines, AST code auto-patching, live PoC sandbox runner, and OASIS SARIF 2.1.0 compliance.">
+  <meta name="twitter:image" content="assets/snap_verified_homepage.png">
+  <meta name="theme-color" content="#07090e">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/charlo_icon.ico">
+  <link rel="apple-touch-icon" href="assets/charlo_icon.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg-dark: #07090e;
-      --bg-card: #0d111a;
-      --bg-card-hover: #121824;
-      --border-color: #1a2333;
-      --border-glow: #2a3b54;
+      --bg-surface: #0b0f18;
+      --bg-card: #0e1320;
+      --bg-card-hover: #141b2e;
+      --border-color: #1a2336;
+      --border-glow: #283955;
       --crimson: #ff2a44;
+      --crimson-hover: #e01730;
       --crimson-glow: rgba(255, 42, 68, 0.35);
+      --crimson-subtle: rgba(255, 42, 68, 0.12);
       --cyan: #00d4ff;
       --cyan-glow: rgba(0, 212, 255, 0.3);
+      --cyan-subtle: rgba(0, 212, 255, 0.12);
       --emerald: #00ff9d;
+      --emerald-subtle: rgba(0, 255, 157, 0.12);
       --purple: #a855f7;
+      --purple-subtle: rgba(168, 85, 247, 0.12);
       --yellow: #ffb800;
-      --text-main: #f1f5f9;
-      --text-muted: #8b93a4;
+      --text-main: #f8fafc;
       --text-sub: #cbd5e1;
+      --text-muted: #8492a6;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-mono: 'JetBrains Mono', monospace;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     * {
@@ -37,36 +70,45 @@
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--font-sans);
       line-height: 1.6;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
-    /* Background Ambient Glows */
-    .ambient-glow-1 {
+    /* Ambient Lighting */
+    .ambient-glow {
       position: absolute;
-      top: -100px;
-      left: 20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255, 42, 68, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
       pointer-events: none;
       z-index: 0;
+    }
+
+    .ambient-glow-1 {
+      top: -120px;
+      left: 15%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(255, 42, 68, 0.15) 0%, transparent 70%);
     }
 
     .ambient-glow-2 {
-      position: absolute;
-      top: 300px;
-      right: 10%;
-      width: 700px;
-      height: 700px;
+      top: 400px;
+      right: 5%;
+      width: 750px;
+      height: 750px;
       background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
     }
 
-    /* Container */
+    .ambient-glow-3 {
+      top: 1800px;
+      left: 8%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+    }
+
+    /* Layout Container */
     .container {
       max-width: 1240px;
       margin: 0 auto;
@@ -75,15 +117,17 @@
       z-index: 1;
     }
 
-    /* Navigation */
+    /* Navbar */
     header.navbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(16px);
-      background: rgba(7, 9, 14, 0.85);
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      background: rgba(7, 9, 14, 0.88);
       border-bottom: 1px solid var(--border-color);
-      padding: 16px 0;
+      padding: 14px 0;
+      transition: all 0.3s ease;
     }
 
     .nav-inner {
@@ -105,46 +149,79 @@
       height: 38px;
       border-radius: 50%;
       background: #11151f;
-      border: 1px solid #ff2a44;
+      border: 1.5px solid var(--crimson);
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 0 15px var(--crimson-glow);
+      flex-shrink: 0;
     }
 
     .brand-icon img {
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
     }
 
     .brand-text {
-      font-size: 19px;
+      font-size: 18px;
       font-weight: 900;
       letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .brand-text span {
       color: var(--crimson);
     }
 
+    .version-tag {
+      font-size: 10px;
+      padding: 2px 6px;
+      background: rgba(0, 212, 255, 0.15);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      color: var(--cyan);
+      border-radius: 4px;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-sub);
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 600;
+      padding: 6px 4px;
+      position: relative;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover {
-      color: var(--cyan);
+    .nav-links a:hover, .nav-links a.active {
+      color: #fff;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--crimson);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after, .nav-links a.active::after {
+      width: 100%;
     }
 
     .nav-cta {
@@ -153,28 +230,31 @@
       gap: 12px;
     }
 
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 20px;
+      padding: 9px 18px;
       border-radius: 8px;
       font-size: 13.5px;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.2s ease;
       cursor: pointer;
+      border: none;
+      white-space: nowrap;
     }
 
     .btn-crimson {
       background: linear-gradient(135deg, #ff2a44, #e6102a);
       color: #ffffff;
-      border: none;
       box-shadow: 0 4px 18px var(--crimson-glow);
     }
 
     .btn-crimson:hover {
+      background: linear-gradient(135deg, #ff475e, #ff2a44);
       transform: translateY(-2px);
       box-shadow: 0 6px 24px rgba(255, 42, 68, 0.5);
     }
@@ -189,24 +269,134 @@
       border-color: var(--cyan);
       color: var(--cyan);
       background: #141b2c;
+      transform: translateY(-2px);
+    }
+
+    .btn-emerald {
+      background: linear-gradient(135deg, #00ff9d, #00c77b);
+      color: #05160d;
+      font-weight: 800;
+    }
+
+    .btn-emerald:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 18px rgba(0, 255, 157, 0.4);
+    }
+
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    /* Hamburger Menu Button */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      position: relative;
+      z-index: 1100;
+      padding: 0;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #fff;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+      border-radius: 2px;
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 300px;
+      height: 100vh;
+      background: rgba(11, 15, 24, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-left: 1px solid var(--border-color);
+      z-index: 1050;
+      padding: 85px 24px 30px;
+      transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.7);
+    }
+
+    .mobile-drawer.active {
+      right: 0;
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1040;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer a {
+      color: var(--text-sub);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .mobile-drawer a:hover, .mobile-drawer a.active {
+      background: rgba(255, 42, 68, 0.12);
+      color: #fff;
     }
 
     /* Hero Section */
     .hero {
-      padding: 75px 0 50px;
+      padding: 70px 0 50px;
       text-align: center;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       background: rgba(255, 42, 68, 0.12);
       border: 1px solid rgba(255, 42, 68, 0.35);
       color: #ff6b7e;
-      padding: 6px 16px;
+      padding: 7px 18px;
       border-radius: 30px;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
@@ -218,7 +408,7 @@
       height: 8px;
       background: var(--crimson);
       border-radius: 50%;
-      box-shadow: 0 0 8px var(--crimson);
+      box-shadow: 0 0 10px var(--crimson);
       animation: pulse 1.8s infinite;
     }
 
@@ -229,18 +419,18 @@
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: 52px;
       font-weight: 900;
       line-height: 1.15;
-      letter-spacing: -0.5px;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      letter-spacing: -0.8px;
+      margin-bottom: 22px;
+      background: linear-gradient(135deg, #ffffff 30%, #a2b0c6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero h1 span.crimson {
-      background: linear-gradient(135deg, #ff2a44 30%, #ff7384 100%);
+      background: linear-gradient(135deg, #ff2a44 20%, #ff7384 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -248,10 +438,10 @@
     .hero p.lead {
       font-size: 18px;
       color: var(--text-sub);
-      max-width: 780px;
+      max-width: 820px;
       margin: 0 auto 36px;
       font-weight: 400;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .hero-actions {
@@ -259,71 +449,237 @@
       align-items: center;
       justify-content: center;
       gap: 16px;
-      margin-bottom: 45px;
+      margin-bottom: 50px;
       flex-wrap: wrap;
     }
 
-    /* Metrics Bar */
+    /* Live Telemetry Ticker */
     .metrics-bar {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px;
-      margin-bottom: 60px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 75px;
     }
 
     .metric-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 20px 16px;
+      border-radius: var(--radius-md);
+      padding: 22px 18px;
       text-align: center;
-      transition: transform 0.2s, border-color 0.2s;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: transparent;
+      transition: background 0.3s ease;
     }
 
     .metric-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
       border-color: var(--border-glow);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .metric-card:hover::before {
+      background: var(--crimson);
     }
 
     .metric-val {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 900;
-      font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 4px;
+      font-family: var(--font-mono);
+      margin-bottom: 5px;
+      line-height: 1.1;
     }
 
     .metric-label {
-      font-size: 11.5px;
+      font-size: 12px;
       color: var(--text-muted);
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
     }
 
-    /* App Screenshot Showcase */
-    .screenshot-frame {
-      background: #090d14;
+    /* Interactive Screenshot Showcase Gallery */
+    .showcase-container {
+      margin-bottom: 100px;
+    }
+
+    .showcase-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-color) transparent;
+    }
+
+    .showcase-tab {
+      background: #0e1422;
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 10px;
-      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 42, 68, 0.15);
-      margin-bottom: 90px;
+      color: var(--text-muted);
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .showcase-tab:hover {
+      color: #fff;
+      border-color: var(--border-glow);
+    }
+
+    .showcase-tab.active {
+      background: rgba(255, 42, 68, 0.15);
+      border-color: var(--crimson);
+      color: #fff;
+      box-shadow: 0 0 16px var(--crimson-glow);
+    }
+
+    .showcase-stage {
+      background: #080b12;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 42, 68, 0.12);
       position: relative;
     }
 
-    .screenshot-frame img {
+    .screenshot-view {
+      position: relative;
+      cursor: zoom-in;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .screenshot-view img {
       width: 100%;
       height: auto;
       border-radius: 10px;
       display: block;
       border: 1px solid #1a2233;
+      transition: transform 0.3s ease;
     }
 
-    .screenshot-caption {
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-top: 14px;
+    .screenshot-view:hover img {
+      transform: scale(1.008);
+    }
+
+    .zoom-hint {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(11, 15, 24, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-color);
+      color: var(--text-sub);
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .showcase-info {
+      padding: 18px 12px 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .showcase-info-text h3 {
+      font-size: 18px;
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .showcase-info-text p {
+      font-size: 13.5px;
+      color: var(--text-sub);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(14px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 95vw;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), 0 0 20px var(--crimson-glow);
+      border: 1px solid var(--border-glow);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      background: #141b2b;
+      border: 1px solid #283750;
+      color: #fff;
+      font-size: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .lightbox-close:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
     }
 
     /* Section Headers */
@@ -337,79 +693,115 @@
       font-weight: 800;
       color: var(--cyan);
       text-transform: uppercase;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.8px;
       margin-bottom: 10px;
+      display: inline-block;
     }
 
     .section-title {
-      font-size: 34px;
+      font-size: 36px;
       font-weight: 900;
       margin-bottom: 14px;
       color: #fff;
+      letter-spacing: -0.5px;
     }
 
     .section-subtitle {
       font-size: 16px;
       color: var(--text-muted);
-      max-width: 650px;
+      max-width: 680px;
       margin: 0 auto;
+      line-height: 1.6;
     }
 
     /* Interactive Live PoC Simulator */
     .sandbox-container {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-      margin-bottom: 90px;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+      margin-bottom: 100px;
+      position: relative;
     }
 
     .sandbox-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 28px;
+      align-items: start;
     }
 
-    .sandbox-form label {
-      display: block;
-      font-size: 12px;
+    .sandbox-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-group label {
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--text-sub);
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
+      letter-spacing: 0.6px;
+      display: flex;
+      justify-content: space-between;
     }
 
-    .sandbox-input, .sandbox-select {
+    .sandbox-input, .sandbox-select, .sandbox-textarea {
       width: 100%;
-      background: #090c13;
-      border: 1px solid #1a2233;
+      background: #070a10;
+      border: 1px solid #1a2336;
       border-radius: 8px;
       padding: 10px 14px;
       color: #fff;
       font-size: 13px;
-      font-family: 'JetBrains Mono', monospace;
-      margin-bottom: 16px;
+      font-family: var(--font-mono);
       outline: none;
-      transition: border-color 0.2s;
+      transition: all 0.2s;
     }
 
-    .sandbox-input:focus, .sandbox-select:focus {
+    .sandbox-input:focus, .sandbox-select:focus, .sandbox-textarea:focus {
       border-color: var(--crimson);
+      box-shadow: 0 0 10px var(--crimson-glow);
     }
 
-    .terminal-box {
-      background: #05070a;
-      border: 1px solid #161c28;
-      border-radius: 10px;
-      padding: 16px;
-      font-family: 'JetBrains Mono', monospace;
+    .sandbox-textarea {
+      resize: vertical;
+      min-height: 70px;
       font-size: 12px;
+    }
+
+    .payload-preview-box {
+      background: rgba(0, 212, 255, 0.05);
+      border: 1px dashed rgba(0, 212, 255, 0.3);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: #38bdf8;
+      word-break: break-all;
+    }
+
+    /* Terminal Console */
+    .terminal-box {
+      background: #05070c;
+      border: 1px solid #161e2e;
+      border-radius: 12px;
+      padding: 18px;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
       color: #94a3b8;
-      min-height: 260px;
+      min-height: 440px;
       display: flex;
       flex-direction: column;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.6);
     }
 
     .terminal-header {
@@ -417,8 +809,13 @@
       align-items: center;
       gap: 8px;
       padding-bottom: 12px;
-      border-bottom: 1px solid #131822;
+      border-bottom: 1px solid #131a26;
       margin-bottom: 12px;
+    }
+
+    .t-dots {
+      display: flex;
+      gap: 6px;
     }
 
     .t-dot { width: 10px; height: 10px; border-radius: 50%; }
@@ -430,42 +827,150 @@
       font-size: 11px;
       color: #64748b;
       margin-left: auto;
+      letter-spacing: 0.8px;
+      font-weight: 700;
+    }
+
+    .terminal-tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #131a26;
+      padding-bottom: 8px;
+    }
+
+    .term-tab {
+      background: transparent;
+      border: none;
+      color: #64748b;
+      font-size: 11.5px;
+      font-family: var(--font-mono);
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .term-tab:hover {
+      color: #fff;
+    }
+
+    .term-tab.active {
+      background: #121927;
+      color: var(--cyan);
     }
 
     .terminal-output {
       flex: 1;
       overflow-y: auto;
-      line-height: 1.5;
+      line-height: 1.6;
+      white-space: pre-wrap;
     }
 
-    /* 18 Engines Grid */
+    /* 18 Engines Catalog & Interactive Filters */
+    .engines-catalog-section {
+      margin-bottom: 100px;
+    }
+
+    .engine-filter-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: #0e1422;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover {
+      color: #fff;
+      border-color: var(--border-glow);
+    }
+
+    .filter-btn.active {
+      background: rgba(0, 212, 255, 0.15);
+      border-color: var(--cyan);
+      color: #fff;
+      box-shadow: 0 0 12px var(--cyan-glow);
+    }
+
+    .engine-search-box {
+      position: relative;
+      min-width: 240px;
+    }
+
+    .engine-search-box input {
+      width: 100%;
+      background: #080b12;
+      border: 1px solid var(--border-color);
+      padding: 8px 14px 8px 34px;
+      border-radius: 30px;
+      color: #fff;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .engine-search-box input:focus {
+      border-color: var(--cyan);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12px;
+      color: #64748b;
+      pointer-events: none;
+    }
+
     .engines-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 18px;
-      margin-bottom: 90px;
+      gap: 20px;
     }
 
     .engine-card {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 22px;
-      transition: all 0.2s ease;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: all 0.25s ease;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
     .engine-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
       border-color: var(--border-glow);
       background: var(--bg-card-hover);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .engine-header {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 12px;
     }
 
@@ -474,11 +979,12 @@
       width: 44px;
       height: 44px;
       border-radius: 10px;
-      background: #121824;
+      background: #111726;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid #1e293b;
+      border: 1px solid #1d273a;
+      flex-shrink: 0;
     }
 
     .engine-title {
@@ -491,80 +997,236 @@
       display: inline-block;
       font-size: 10px;
       font-weight: 800;
-      padding: 2px 7px;
+      padding: 3px 8px;
       border-radius: 4px;
       margin-left: auto;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
-    .tag-sec { background: rgba(255, 42, 68, 0.15); color: #ff5268; border: 1px solid rgba(255, 42, 68, 0.3); }
-    .tag-qa { background: rgba(0, 212, 255, 0.15); color: #38bdf8; border: 1px solid rgba(0, 212, 255, 0.3); }
-    .tag-perf { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
-    .tag-patch { background: rgba(0, 255, 157, 0.15); color: #34d399; border: 1px solid rgba(0, 255, 157, 0.3); }
+    .tag-sec { background: var(--crimson-subtle); color: #ff5268; border: 1px solid rgba(255, 42, 68, 0.3); }
+    .tag-qa { background: var(--cyan-subtle); color: #38bdf8; border: 1px solid rgba(0, 212, 255, 0.3); }
+    .tag-perf { background: var(--purple-subtle); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .tag-patch { background: var(--emerald-subtle); color: #34d399; border: 1px solid rgba(0, 255, 157, 0.3); }
 
     .engine-desc {
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--text-sub);
-      line-height: 1.5;
-      margin-bottom: 14px;
+      line-height: 1.55;
+      margin-bottom: 16px;
       flex: 1;
     }
 
     .engine-standards {
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--text-muted);
       font-weight: 600;
-      border-top: 1px solid #161c28;
-      padding-top: 10px;
+      border-top: 1px solid #141b2a;
+      padding-top: 12px;
+      font-family: var(--font-mono);
     }
 
-    /* Auto-Patcher Diff Preview */
-    .diff-preview-container {
+    /* Auto-Patcher Diff Studio */
+    .diff-studio-container {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 28px;
-      margin-bottom: 90px;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 100px;
     }
 
-    .diff-box {
+    .diff-flaw-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .diff-tab {
+      background: #070a10;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .diff-tab:hover {
+      color: #fff;
+    }
+
+    .diff-tab.active {
+      background: rgba(0, 255, 157, 0.12);
+      border-color: var(--emerald);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(0, 255, 157, 0.25);
+    }
+
+    .diff-stage {
       background: #05070a;
       border: 1px solid #182030;
       border-radius: 10px;
-      padding: 20px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: #94a3b8;
-      line-height: 1.6;
-      overflow-x: auto;
+      position: relative;
+      overflow: hidden;
     }
 
-    .diff-add { color: #00ff9d; background: rgba(0, 255, 157, 0.08); display: block; padding: 2px 4px; }
-    .diff-del { color: #ff2a44; background: rgba(255, 42, 68, 0.08); display: block; padding: 2px 4px; }
+    .diff-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #090e18;
+      border-bottom: 1px solid #182030;
+      padding: 10px 18px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .diff-box {
+      padding: 20px;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      line-height: 1.65;
+      overflow-x: auto;
+      color: #94a3b8;
+    }
+
+    .diff-add { color: #00ff9d; background: rgba(0, 255, 157, 0.08); display: block; padding: 2px 6px; border-left: 3px solid #00ff9d; }
+    .diff-del { color: #ff2a44; background: rgba(255, 42, 68, 0.08); display: block; padding: 2px 6px; border-left: 3px solid #ff2a44; }
     .diff-hdr { color: #00d4ff; font-weight: 700; display: block; margin: 4px 0; }
+    .diff-ctx { color: #64748b; display: block; padding: 2px 6px; }
+
+    /* Feature Comparison Matrix */
+    .comparison-section {
+      margin-bottom: 100px;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      background: var(--bg-card);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13.5px;
+    }
+
+    .comparison-table th, .comparison-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .comparison-table th {
+      background: #0a0e18;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-sub);
+    }
+
+    .comparison-table th.charlo-col, .comparison-table td.charlo-col {
+      background: rgba(255, 42, 68, 0.05);
+      border-left: 1px solid rgba(255, 42, 68, 0.3);
+      border-right: 1px solid rgba(255, 42, 68, 0.3);
+    }
+
+    .comparison-table th.charlo-col {
+      color: #ff5268;
+      font-size: 15px;
+    }
+
+    .comparison-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .c-check { color: #00ff9d; font-weight: 900; font-size: 16px; }
+    .c-cross { color: #64748b; font-weight: 700; font-size: 15px; }
+
+    /* Architecture Workflow */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-bottom: 100px;
+      position: relative;
+    }
+
+    .arch-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      position: relative;
+      transition: all 0.25s;
+    }
+
+    .arch-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-glow);
+    }
+
+    .arch-num {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      font-size: 20px;
+      font-weight: 900;
+      font-family: var(--font-mono);
+      color: #1e293b;
+    }
+
+    .arch-icon {
+      font-size: 26px;
+      margin-bottom: 14px;
+    }
+
+    .arch-card h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .arch-card p {
+      font-size: 12.5px;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
 
     /* CLI & Terminal Showcase */
     .cli-container {
       background: #080c14;
       border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 90px;
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 100px;
     }
 
     .code-snippet {
       background: #05070a;
       border: 1px solid #1a2233;
       border-radius: 8px;
-      padding: 16px 20px;
-      font-family: 'JetBrains Mono', monospace;
+      padding: 14px 18px;
+      font-family: var(--font-mono);
       font-size: 13px;
       color: #38bdf8;
-      position: relative;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
+      word-break: break-all;
     }
 
     .copy-btn {
@@ -572,11 +1234,12 @@
       border: 1px solid #243048;
       color: #cbd5e1;
       border-radius: 6px;
-      padding: 6px 12px;
-      font-size: 11px;
+      padding: 6px 14px;
+      font-size: 11.5px;
       cursor: pointer;
       font-weight: 700;
       transition: all 0.2s;
+      flex-shrink: 0;
     }
 
     .copy-btn:hover {
@@ -585,84 +1248,347 @@
       border-color: var(--cyan);
     }
 
+    /* FAQ Accordion */
+    .faq-container {
+      margin-bottom: 100px;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .faq-item.active {
+      border-color: var(--border-glow);
+    }
+
+    .faq-question {
+      padding: 18px 22px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      color: var(--cyan);
+    }
+
+    .faq-icon {
+      font-size: 18px;
+      color: #64748b;
+      transition: transform 0.25s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+      color: var(--crimson);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+      padding: 0 22px;
+      font-size: 13.5px;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 22px 18px;
+    }
+
+    /* Download / Quickstart Section */
+    .quickstart-container {
+      background: radial-gradient(circle at top right, rgba(255, 42, 68, 0.08), transparent 60%), var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      text-align: center;
+      margin-bottom: 100px;
+    }
+
+    .quickstart-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .qs-tab {
+      background: #090e18;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .qs-tab.active {
+      background: var(--crimson-subtle);
+      border-color: var(--crimson);
+      color: #fff;
+    }
+
+    /* Floating Toast Notification */
+    .toast-pill {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0f1626;
+      border: 1px solid var(--cyan);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      font-size: 13px;
+      font-weight: 600;
+      z-index: 3000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toast-pill.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Back To Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 42px;
+      height: 42px;
+      background: #101626;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 900;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
+      transform: translateY(-3px);
+    }
+
     /* Footer */
     footer {
       border-top: 1px solid var(--border-color);
-      padding: 40px 0;
-      text-align: center;
+      padding: 50px 0 35px;
+      background: #04060a;
       color: var(--text-muted);
       font-size: 13px;
-      background: #05070a;
     }
 
-    footer a {
-      color: var(--cyan);
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #717f96;
+      max-width: 340px;
+    }
+
+    .footer-col h5 {
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-col a {
+      color: #8492a6;
       text-decoration: none;
+      transition: color 0.2s;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    .footer-col a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #121826;
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12px;
+      color: #556277;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .sandbox-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 34px; }
-      .sandbox-grid { grid-template-columns: 1fr; }
-      .engines-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+      .hero h1 {
+        font-size: 34px;
+      }
+      .hero p.lead {
+        font-size: 16px;
+      }
+      .nav-links, .nav-cta {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .engines-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .section-title {
+        font-size: 28px;
+      }
+      .sandbox-container, .diff-studio-container, .cli-container, .quickstart-container {
+        padding: 20px 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="ambient-glow-1"></div>
-  <div class="ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
 
-  <!-- Navigation -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="container nav-inner">
       <a href="#" class="brand">
         <div class="brand-icon">
-          <img src="assets/charlo_icon.png" alt="CHARLO Logo">
+          <img src="assets/charlo_icon.png" alt="CHARLO Workstation Logo">
         </div>
-        <div class="brand-text">CHARLO <span>TESTING AGENT</span></div>
+        <div class="brand-text">CHARLO <span>AGENT</span> <span class="version-tag">v2.4 LTS</span></div>
       </a>
+
+      <!-- Desktop Navigation Links -->
       <ul class="nav-links">
+        <li><a href="#showcase">Showcase</a></li>
         <li><a href="#engines">18 Engines</a></li>
         <li><a href="#sandbox">Live PoC Sandbox</a></li>
         <li><a href="#autopatch">Auto-Patcher</a></li>
-        <li><a href="#cli">CLI & Terminal</a></li>
-        <li><a href="#download">Quickstart</a></li>
+        <li><a href="#comparison">Matrix</a></li>
+        <li><a href="#cli">CLI &amp; CI/CD</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
+
       <div class="nav-cta">
-        <a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent" target="_blank" class="btn btn-outline">
+        <a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
           ⭐ Star on GitHub
         </a>
-        <a href="#download" class="btn btn-crimson">
+        <a href="#download" class="btn btn-crimson btn-sm">
           🚀 Launch App
         </a>
       </div>
+
+      <!-- Hamburger Menu Button -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <!-- Mobile Drawer & Overlay -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <nav class="mobile-drawer" id="mobile-drawer">
+    <a href="#showcase" class="drawer-link">🖥️ Workstation Showcase</a>
+    <a href="#engines" class="drawer-link">⚙️ 18 Specialized Engines</a>
+    <a href="#sandbox" class="drawer-link">⚡ Live PoC Sandbox</a>
+    <a href="#autopatch" class="drawer-link">✨ Code Auto-Patcher</a>
+    <a href="#comparison" class="drawer-link">📊 Enterprise Comparison</a>
+    <a href="#cli" class="drawer-link">💻 Headless CLI &amp; CI/CD</a>
+    <a href="#faq" class="drawer-link">❓ Knowledge &amp; FAQ</a>
+    <a href="#download" class="drawer-link" style="color: var(--crimson);">🚀 Windows Quickstart</a>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 10px;">
+      <a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent" target="_blank" rel="noopener noreferrer" class="btn btn-crimson" style="width: 100%;">
+        ⭐ Star on GitHub
+      </a>
+    </div>
+  </nav>
 
   <main class="container">
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-badge">
-        <span class="pulse"></span> v2.4 Enterprise Security &amp; QA Workstation
+        <span class="pulse"></span> Enterprise Security &amp; QA Workstation • 100% Offline Capable
       </div>
       <h1>Autonomous AI-Powered Security, QA &amp;<br><span class="crimson">Automated Remediation Workstation</span></h1>
       <p class="lead">
-        A professional cybersecurity testing laboratory and multi-target verification suite for Windows, Android, and Web applications. Featuring 18 specialized testing engines, AST code auto-patching, live PoC exploit runner, and OASIS SARIF 2.1.0 compliance.
+        A professional cybersecurity testing laboratory and multi-target verification suite for Windows binaries, Android APKs, and Web applications. Featuring 18 specialized testing engines, AST code auto-patching, live PoC exploit runner, and OASIS SARIF 2.1.0 compliance.
       </p>
+
       <div class="hero-actions">
         <a href="#sandbox" class="btn btn-crimson" style="padding: 13px 28px; font-size: 15px;">
           ⚡ Test Live PoC Simulator
         </a>
         <a href="#download" class="btn btn-outline" style="padding: 13px 26px; font-size: 15px;">
-          📥 Download Windows Installer
+          📥 Download Windows Quickstart
         </a>
       </div>
 
-      <!-- Metrics Bar -->
+      <!-- Live Telemetry Metrics -->
       <div class="metrics-bar">
         <div class="metric-card">
           <div class="metric-val" style="color: #00d4ff;">18</div>
@@ -670,122 +1596,235 @@
         </div>
         <div class="metric-card">
           <div class="metric-val" style="color: #00ff9d;">100%</div>
-          <div class="metric-label">Automated Test Pass Rate</div>
+          <div class="metric-label">133 Passed Unit Tests</div>
         </div>
         <div class="metric-card">
-          <div class="metric-val" style="color: #ff2a44;">133</div>
-          <div class="metric-label">Verification Checks</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-val" style="color: #a855f7;">SARIF 2.1.0</div>
+          <div class="metric-val" style="color: #ff2a44;">SARIF 2.1.0</div>
           <div class="metric-label">GitHub / GitLab Standard</div>
         </div>
-      </div>
-
-      <!-- Workstation App Screenshot -->
-      <div class="screenshot-frame">
-        <img src="assets/snap_verified_homepage.png" alt="CHARLO Workstation Homepage Screenshot">
-        <div class="screenshot-caption">CHARLO Testing Agent Workstation — Ultra-sleek Cyber Crimson &amp; Obsidian GUI</div>
+        <div class="metric-card">
+          <div class="metric-val" style="color: #a855f7;">&lt; 60 ms</div>
+          <div class="metric-label">Live PoC Sandbox Probe</div>
+        </div>
       </div>
     </section>
 
-    <!-- Interactive Live PoC Sandbox Simulator -->
+    <!-- Interactive Workstation Showcase Gallery -->
+    <section id="showcase" class="showcase-container">
+      <div class="section-header">
+        <div class="section-tag">High-Resolution UI Tour</div>
+        <h2 class="section-title">Explore the Standalone PySide6 Workstation</h2>
+        <p class="section-subtitle">
+          Engineered for cybersecurity analysts and QA engineers. Take an interactive tour across all verified workspace modules.
+        </p>
+      </div>
+
+      <!-- Gallery Tabs -->
+      <div class="showcase-tabs" id="showcase-tabs">
+        <button class="showcase-tab active" data-img="assets/snap_verified_homepage.png" data-title="Cyber Crimson Workstation Homepage" data-desc="Complete overview of targets, quick scanning profiles, active engines, and live system memory telemetry.">
+          🏠 Workstation Homepage
+        </button>
+        <button class="showcase-tab" data-img="assets/snap_verified_findings.png" data-title="Deep Technical Findings &amp; SARIF Export" data-desc="Hierarchical vulnerability tree with severity filters, CVSS v3.1 scoring, and 1-click OASIS SARIF v2.1.0 export.">
+          🛡️ Findings &amp; SARIF
+        </button>
+        <button class="showcase-tab" data-img="assets/snap_verified_bugs.png" data-title="Bug Finder, Secret Leaks &amp; Hardening" data-desc="Scans codebase and endpoints for high-risk hardcoded API tokens, SQL syntax traps, and security regression alerts.">
+          🐞 Bug Finder &amp; Leaks
+        </button>
+        <button class="showcase-tab" data-img="assets/snap_verified_qa_automation.png" data-title="Automated QA Test Suite Workbench" data-desc="Unified test runner supporting Playwright, Selenium, Appium Android, and WinAppDriver desktop execution.">
+          🧪 QA Test Automation
+        </button>
+        <button class="showcase-tab" data-img="assets/snap_verified_poc_dialog.png" data-title="Live Non-Destructive PoC Sandbox Dialog" data-desc="Real-time target verification probe with HTTP status codes, latency timings, and response header inspection.">
+          ⚡ Live PoC Sandbox
+        </button>
+        <button class="showcase-tab" data-img="assets/snap_verified_autopatch_dialog.png" data-title="Autonomous AST Code Auto-Patcher" data-desc="Inspects vulnerability ASTs and generates production-ready Unified Git Diffs (.patch) with automatic .bak backup.">
+          ✨ Auto-Patcher Studio
+        </button>
+        <button class="showcase-tab" data-img="assets/snap_verified_webhook_dialog.png" data-title="Multi-Channel Webhook Watchdog" data-desc="Instant dispatch of critical findings to Slack, Discord, Microsoft Teams, and custom enterprise SIEM webhooks.">
+          🔔 Webhook Watchdog
+        </button>
+      </div>
+
+      <!-- Screenshot Display Stage -->
+      <div class="showcase-stage">
+        <div class="screenshot-view" id="screenshot-view">
+          <img id="showcase-img" src="assets/snap_verified_homepage.png" alt="CHARLO Workstation Screenshot">
+          <div class="zoom-hint">🔍 Click to zoom full-resolution</div>
+        </div>
+        <div class="showcase-info">
+          <div class="showcase-info-text">
+            <h3 id="showcase-title">Cyber Crimson Workstation Homepage</h3>
+            <p id="showcase-desc">Complete overview of targets, quick scanning profiles, active engines, and live system memory telemetry.</p>
+          </div>
+          <button class="btn btn-outline btn-sm" id="expand-modal-btn">
+            ⛶ View Fullscreen
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Zoom Modal -->
+    <div class="lightbox-modal" id="lightbox-modal">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close fullscreen modal">✕</button>
+        <img id="lightbox-img" src="" alt="Fullscreen Screenshot">
+      </div>
+    </div>
+
+    <!-- Interactive Live PoC Exploit Sandbox Simulator -->
     <section id="sandbox" class="sandbox-container">
-      <div class="section-header" style="margin-bottom: 24px;">
-        <div class="section-tag">Interactive Simulation</div>
+      <div class="section-header" style="margin-bottom: 28px;">
+        <div class="section-tag">Interactive Hands-On Lab</div>
         <h2 class="section-title">Interactive Live PoC Exploit &amp; Sandbox Runner</h2>
         <p class="section-subtitle">
-          Test non-destructive active security probes directly in your browser. Verify whether endpoints trigger live database errors, tag reflections, or CORS leaks.
+          Test non-destructive active security probes directly in your browser. Verify whether live endpoints leak database errors, reflect unescaped tags, or expose sensitive CORS headers.
         </p>
       </div>
 
       <div class="sandbox-grid">
         <div class="sandbox-form">
-          <label for="poc-url">Target Endpoint URL</label>
-          <input type="text" id="poc-url" class="sandbox-input" value="https://api.pmec.ac.in/v1/search">
+          <div class="field-group">
+            <label for="poc-url">Target Endpoint URL</label>
+            <input type="text" id="poc-url" class="sandbox-input" value="https://api.pmec.ac.in/v1/search" placeholder="https://api.target.com/endpoint">
+          </div>
 
-          <label for="poc-probe">Vulnerability Probe Signature</label>
-          <select id="poc-probe" class="sandbox-select">
-            <option value="sqli">SQL Injection — Syntax Error Leakage (' OR 1=1--)</option>
-            <option value="xss">Cross-Site Scripting — Unescaped Probe Tag (&lt;charlo_xss_probe&gt;)</option>
-            <option value="cswsh">WebSocket CSWSH — Cross-Site Origin Handshake</option>
-            <option value="traversal">Arbitrary Path Traversal (../../../../etc/passwd)</option>
-            <option value="cors">CORS Wildcard with Allow-Credentials Header</option>
-          </select>
+          <div class="field-group">
+            <label for="poc-method">HTTP Request Method</label>
+            <select id="poc-method" class="sandbox-select">
+              <option value="GET">GET — Query Parameter Injection</option>
+              <option value="POST">POST — JSON Body Payload</option>
+              <option value="OPTIONS">OPTIONS — CORS Preflight Audit</option>
+              <option value="PUT">PUT — Resource Update Boundary</option>
+            </select>
+          </div>
 
-          <label for="poc-method">HTTP Method</label>
-          <select id="poc-method" class="sandbox-select">
-            <option value="GET">GET</option>
-            <option value="POST">POST</option>
-            <option value="OPTIONS">OPTIONS</option>
-          </select>
+          <div class="field-group">
+            <label for="poc-probe">Vulnerability Probe Signature</label>
+            <select id="poc-probe" class="sandbox-select">
+              <option value="sqli">SQL Injection — Syntax Error Leakage (' OR 1=1--)</option>
+              <option value="xss">Cross-Site Scripting — Unescaped Probe Tag (&lt;charlo_xss_probe&gt;)</option>
+              <option value="cswsh">WebSocket CSWSH — Cross-Site Origin Handshake</option>
+              <option value="traversal">Arbitrary Path Traversal (../../../../etc/passwd)</option>
+              <option value="cors">CORS Wildcard with Allow-Credentials Header</option>
+              <option value="secret">Unauthenticated Environment / Secret Route (/actuator/env)</option>
+            </select>
+          </div>
 
-          <button id="run-poc-btn" class="btn btn-crimson" style="width: 100%; padding: 12px; margin-top: 6px;">
-            ⚡ Execute Live PoC Probe
-          </button>
+          <!-- Live Payload Preview Box -->
+          <div class="field-group">
+            <label>Injected Non-Destructive Payload</label>
+            <div id="payload-preview" class="payload-preview-box">
+              q=' OR 1=1-- charlo_sqli_test
+            </div>
+          </div>
+
+          <div class="field-group" id="body-field-group" style="display: none;">
+            <label for="poc-body">Custom Request Body (JSON)</label>
+            <textarea id="poc-body" class="sandbox-textarea">{"user": "admin' OR 1=1--", "scope": "full"}</textarea>
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-top: 4px;">
+            <button id="run-poc-btn" class="btn btn-crimson" style="flex: 1; padding: 12px;">
+              ⚡ Execute Live PoC Probe
+            </button>
+            <button id="reset-poc-btn" class="btn btn-outline" style="padding: 12px 16px;" title="Reset Console">
+              🔄 Reset
+            </button>
+          </div>
         </div>
 
+        <!-- Terminal Console -->
         <div class="terminal-box">
           <div class="terminal-header">
-            <span class="t-dot t-red"></span>
-            <span class="t-dot t-yellow"></span>
-            <span class="t-dot t-green"></span>
+            <div class="t-dots">
+              <span class="t-dot t-red"></span>
+              <span class="t-dot t-yellow"></span>
+              <span class="t-dot t-green"></span>
+            </div>
             <span class="terminal-title">SANDBOX TELEMETRY LOG</span>
           </div>
+
+          <!-- Terminal Tabs -->
+          <div class="terminal-tabs">
+            <button class="term-tab active" data-tab="log">Terminal Log</button>
+            <button class="term-tab" data-tab="response">Response Body</button>
+            <button class="term-tab" data-tab="headers">HTTP Headers</button>
+            <button class="term-tab" data-tab="remediation">Remediation</button>
+          </div>
+
+          <!-- Terminal Output Screen -->
           <div id="terminal-output" class="terminal-output">
-            <span style="color: #64748b;">// Ready. Select a probe signature and click "Execute Live PoC Probe".</span><br>
+            <span style="color: #64748b;">// CHARLO Live PoC Exploit &amp; Sandbox Runner v2.4</span>
+            <span style="color: #64748b;">// Ready. Select an endpoint or probe signature and click "Execute Live PoC Probe".</span>
             <span style="color: #38bdf8;">[IDLE]</span> Awaiting target dispatch...
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 18 Engines Catalog -->
-    <section id="engines" style="margin-bottom: 90px;">
+    <!-- 18 Engines Catalog & Interactive Filters -->
+    <section id="engines" class="engines-catalog-section">
       <div class="section-header">
         <div class="section-tag">Full-Stack Capabilities</div>
         <h2 class="section-title">18 Specialized Security &amp; QA Testing Engines</h2>
         <p class="section-subtitle">
-          Every layer of your software architecture audited, tested, and scored against official international cybersecurity and QA benchmarks.
+          Every layer of your software architecture audited, tested, and scored against international cybersecurity frameworks (OWASP, NIST 800-53, CWE, MITRE ATT&amp;CK).
         </p>
       </div>
 
-      <div class="engines-grid">
+      <!-- Engine Filter Bar -->
+      <div class="engine-filter-bar">
+        <div class="filter-pills" id="engine-filters">
+          <button class="filter-btn active" data-category="all">All Engines (18)</button>
+          <button class="filter-btn" data-category="binary">Binary &amp; Mobile (2)</button>
+          <button class="filter-btn" data-category="web">Web &amp; APIs (4)</button>
+          <button class="filter-btn" data-category="qa">QA &amp; Performance (5)</button>
+          <button class="filter-btn" data-category="devsecops">DevSecOps &amp; CI (3)</button>
+          <button class="filter-btn" data-category="remediation">Remediation &amp; System (4)</button>
+        </div>
+
+        <div class="engine-search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="engine-search" placeholder="Search engines or standards...">
+        </div>
+      </div>
+
+      <!-- 18 Engines Grid -->
+      <div class="engines-grid" id="engines-grid">
         <!-- 1. Android APK Analyzer -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="binary" data-keywords="android apk axml dex permissions decompiler binary masvs cwe-327">
           <div class="engine-header">
             <div class="engine-icon">🤖</div>
             <div class="engine-title">Android APK Decompiler</div>
-            <span class="engine-tag tag-sec">Binary</span>
+            <span class="engine-tag tag-sec">Binary &amp; Mobile</span>
           </div>
           <p class="engine-desc">Pure-Python AXML binary manifest parsing, exported component boundary checks, DEX bytecode string extraction, and DES/ECB cryptographic audits.</p>
           <div class="engine-standards">Standards: OWASP MASVS, CWE-327, Android 12+ Manifest Policy</div>
         </div>
 
         <!-- 2. Windows EXE PE Analyzer -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="binary" data-keywords="windows exe pe dll aslr dep nx safeseh memory exploit authenticode">
           <div class="engine-header">
             <div class="engine-icon">🪟</div>
             <div class="engine-title">Windows PE Exploit Mitigations</div>
-            <span class="engine-tag tag-sec">Binary</span>
+            <span class="engine-tag tag-sec">Binary &amp; OS</span>
           </div>
           <p class="engine-desc">Parses PE headers and section entropy for ASLR, DEP/NX, Control Flow Guard, SafeSEH, Authenticode digital signatures, and W^X memory violations.</p>
-          <div class="engine-standards">Standards: Microsoft SDL, CWE-119, PE Format Spec</div>
+          <div class="engine-standards">Standards: Microsoft SDL, CWE-119, PE32+ Spec</div>
         </div>
 
-        <!-- 3. Web Application Auditing -->
-        <div class="engine-card">
+        <!-- 3. OWASP Web 100-Check Catalog -->
+        <div class="engine-card" data-category="web" data-keywords="owasp web csp hsts clickjacking xss sqli cookies samesite route disclosure">
           <div class="engine-header">
             <div class="engine-icon">🌐</div>
             <div class="engine-title">OWASP Web 100-Check Catalog</div>
-            <span class="engine-tag tag-sec">Security</span>
+            <span class="engine-tag tag-sec">Web Security</span>
           </div>
           <p class="engine-desc">Audits HTTPS, HSTS, CSP with unsafe-eval detection, clickjacking framing defenses, cookie flags (Secure/HttpOnly/SameSite), and route disclosure.</p>
-          <div class="engine-standards">Standards: OWASP Top 10, CWE-79, CWE-89, NIST 800-53</div>
+          <div class="engine-standards">Standards: OWASP Top 10 2021, CWE-79, CWE-89, NIST 800-53</div>
         </div>
 
         <!-- 4. Autonomous Auto-Patcher -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="remediation" data-keywords="autopatch patch unified diff git ast code remediation rollback bak">
           <div class="engine-header">
             <div class="engine-icon">✨</div>
             <div class="engine-title">Autonomous Code Auto-Patcher</div>
@@ -795,8 +1834,8 @@
           <div class="engine-standards">Outputs: git apply, Unified Diff RFC, Automatic .bak Safety</div>
         </div>
 
-        <!-- 5. GraphQL Security Engine -->
-        <div class="engine-card">
+        <!-- 5. GraphQL & WebSocket Auditor -->
+        <div class="engine-card" data-category="web" data-keywords="graphql websocket cswsh introspection schema depth recursion rfc 6455">
           <div class="engine-header">
             <div class="engine-icon">🛰️</div>
             <div class="engine-title">GraphQL &amp; WebSocket Auditor</div>
@@ -806,8 +1845,8 @@
           <div class="engine-standards">Standards: GraphQL Foundation Spec, RFC 6455 WebSockets</div>
         </div>
 
-        <!-- 6. Popular Tools QA Automation -->
-        <div class="engine-card">
+        <!-- 6. QA Test Automation Workbench -->
+        <div class="engine-card" data-category="qa" data-keywords="qa test playwright selenium appium winappdriver automation flaky pytest">
           <div class="engine-header">
             <div class="engine-icon">🧪</div>
             <div class="engine-title">QA Test Automation Workbench</div>
@@ -818,7 +1857,7 @@
         </div>
 
         <!-- 7. REST API Fuzzing Workbench -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="web" data-keywords="rest api fuzzing swagger openapi postman curl boundaries parameters">
           <div class="engine-header">
             <div class="engine-icon">🔌</div>
             <div class="engine-title">REST API Contract &amp; Fuzzing</div>
@@ -829,7 +1868,7 @@
         </div>
 
         <!-- 8. Performance & Load Simulator -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="qa" data-keywords="load performance k6 jmeter latency p95 p99 throughput vus grafana">
           <div class="engine-header">
             <div class="engine-icon">⚡</div>
             <div class="engine-title">k6 &amp; JMeter Load Simulator</div>
@@ -840,7 +1879,7 @@
         </div>
 
         <!-- 9. CI/CD Quality Gate Generator -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="devsecops" data-keywords="cicd github actions gitlab ci jenkins quality gate sla junit">
           <div class="engine-header">
             <div class="engine-icon">🚀</div>
             <div class="engine-title">CI/CD Quality Gate Policies</div>
@@ -851,7 +1890,7 @@
         </div>
 
         <!-- 10. Database Schema Integrity -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="remediation" data-keywords="database sql schema foreign key indexes bloat ddl remediation">
           <div class="engine-header">
             <div class="engine-icon">🗄️</div>
             <div class="engine-title">Database Integrity &amp; SQL Defense</div>
@@ -862,7 +1901,7 @@
         </div>
 
         <!-- 11. Multi-Device Viewports -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="qa" data-keywords="viewports responsive mobile iphone ipad android reflow squashing 4k">
           <div class="engine-header">
             <div class="engine-icon">📱</div>
             <div class="engine-title">Multi-Device Responsive Matrix</div>
@@ -873,7 +1912,7 @@
         </div>
 
         <!-- 12. Network & TLS 1.3 Cryptography -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="web" data-keywords="tls ssl crypto ciphers certificates dnssec spf dkim dmarc openssl">
           <div class="engine-header">
             <div class="engine-icon">🔒</div>
             <div class="engine-title">TLS 1.3 &amp; Cryptographic Ciphers</div>
@@ -884,7 +1923,7 @@
         </div>
 
         <!-- 13. Business Logic Flaws -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="qa" data-keywords="business logic race conditions pricing mfa steps state machine bypass">
           <div class="engine-header">
             <div class="engine-icon">💼</div>
             <div class="engine-title">Business Logic &amp; State Machines</div>
@@ -895,7 +1934,7 @@
         </div>
 
         <!-- 14. Memory Leak & Handle Profiler -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="remediation" data-keywords="memory leak handles garbage collection sockets file descriptors gdi">
           <div class="engine-header">
             <div class="engine-icon">🧠</div>
             <div class="engine-title">Memory &amp; Handle Leak Profiler</div>
@@ -906,7 +1945,7 @@
         </div>
 
         <!-- 15. Accessibility & VPAT 2.4 -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="qa" data-keywords="accessibility a11y wcag vpat section 508 contrast aria screen reader axe">
           <div class="engine-header">
             <div class="engine-icon">♿</div>
             <div class="engine-title">Accessibility QA (WCAG 2.2 / 508)</div>
@@ -917,7 +1956,7 @@
         </div>
 
         <!-- 16. OASIS SARIF 2.1.0 Exporter -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="devsecops" data-keywords="sarif oasis github code scanning gitlab security sonarqube json">
           <div class="engine-header">
             <div class="engine-icon">🛡️</div>
             <div class="engine-title">Universal OASIS SARIF 2.1.0</div>
@@ -928,7 +1967,7 @@
         </div>
 
         <!-- 17. Live PoC Sandbox Runner -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="web" data-keywords="poc exploit live probe sandbox status latency headers non-destructive">
           <div class="engine-header">
             <div class="engine-icon">▶</div>
             <div class="engine-title">Live PoC Exploit &amp; Sandbox Runner</div>
@@ -939,7 +1978,7 @@
         </div>
 
         <!-- 18. Continuous Webhook Watchdog -->
-        <div class="engine-card">
+        <div class="engine-card" data-category="devsecops" data-keywords="webhook slack discord teams siem alerts notifications watchdog">
           <div class="engine-header">
             <div class="engine-icon">🔔</div>
             <div class="engine-title">Multi-Channel Webhook Watchdog</div>
@@ -952,27 +1991,170 @@
     </section>
 
     <!-- Autonomous Auto-Patcher Diff Studio -->
-    <section id="autopatch" class="diff-preview-container">
+    <section id="autopatch" class="diff-studio-container">
       <div class="section-header" style="margin-bottom: 24px;">
         <div class="section-tag">Remediation Engine</div>
         <h2 class="section-title">Autonomous Code Auto-Patcher &amp; Unified Git Diff</h2>
         <p class="section-subtitle">
-          CHARLO doesn't just report security flaws — it synthesizes production-grade code transformations and Unified Git Diffs (.patch) for immediate application.
+          CHARLO doesn't just flag security flaws — it synthesizes production-grade code transformations and standard Unified Git Diffs (.patch) for immediate application.
         </p>
       </div>
 
-      <div class="diff-box">
-        <span class="diff-hdr">diff --git a/vulnerable_service.py b/vulnerable_service.py</span>
-        <span class="diff-hdr">--- a/vulnerable_service.py</span>
-        <span class="diff-hdr">+++ b/vulnerable_service.py</span>
-        <span style="color: #64748b;">@@ -12,4 +12,4 @@ def get_user_profile(user_id):</span>
-        <span class="diff-del">-    query = f"SELECT * FROM users WHERE id = '{user_id}'"</span>
-        <span class="diff-del">-    cursor.execute(query)</span>
-        <span class="diff-add">+# [CHARLO AUTO-REMEDIATION] Parameterized query protection against SQLi</span>
-        <span class="diff-add">+    cursor.execute("SELECT * FROM users WHERE id = %s", (user_id,))</span>
-        <span style="color: #64748b;">     return cursor.fetchone()</span>
+      <!-- Vulnerability Tabs -->
+      <div class="diff-flaw-tabs" id="diff-flaw-tabs">
+        <button class="diff-tab active" data-flaw="sqli">SQL Injection</button>
+        <button class="diff-tab" data-flaw="xss">Reflected XSS</button>
+        <button class="diff-tab" data-flaw="secret">Hardcoded Secret</button>
+        <button class="diff-tab" data-flaw="csrf">Missing CSRF Guard</button>
+        <button class="diff-tab" data-flaw="cookie">Insecure Cookie Flags</button>
+        <button class="diff-tab" data-flaw="traversal">Path Traversal</button>
+      </div>
+
+      <!-- Diff Preview Box -->
+      <div class="diff-stage">
+        <div class="diff-toolbar">
+          <span id="diff-filename">auth_service.py</span>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-outline btn-sm" id="copy-diff-btn">📋 Copy Diff</button>
+            <button class="btn btn-emerald btn-sm" id="download-patch-btn">⬇️ Download .patch</button>
+          </div>
+        </div>
+        <div class="diff-box" id="diff-content">
+          <span class="diff-hdr">diff --git a/services/auth_service.py b/services/auth_service.py</span>
+          <span class="diff-hdr">--- a/services/auth_service.py</span>
+          <span class="diff-hdr">+++ b/services/auth_service.py</span>
+          <span class="diff-ctx">@@ -18,5 +18,6 @@ def authenticate_user(username, password_hash):</span>
+          <span class="diff-del">-    query = f"SELECT id, role FROM accounts WHERE user = '{username}' AND pass = '{password_hash}'"</span>
+          <span class="diff-del">-    cursor.execute(query)</span>
+          <span class="diff-add">+# [CHARLO AUTO-REMEDIATION] Parameterized Prepared Statement Protection</span>
+          <span class="diff-add">+    query = "SELECT id, role FROM accounts WHERE user = %s AND pass = %s"</span>
+          <span class="diff-add">+    cursor.execute(query, (username, password_hash))</span>
+          <span class="diff-ctx">     return cursor.fetchone()</span>
+        </div>
       </div>
     </section>
+
+    <!-- Enterprise Feature Comparison Matrix -->
+    <section id="comparison" class="comparison-section">
+      <div class="section-header">
+        <div class="section-tag">Competitive Benchmark</div>
+        <h2 class="section-title">How CHARLO Outperforms Legacy Scanners</h2>
+        <p class="section-subtitle">
+          Compare CHARLO Testing Agent side-by-side with industry alternatives. Experience offline workstation autonomy without recurring licensing fees.
+        </p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Capability / Feature</th>
+              <th class="charlo-col">CHARLO Testing Agent</th>
+              <th>OWASP ZAP</th>
+              <th>SonarQube (Dev)</th>
+              <th>Snyk (Free)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>18 Unified Specialized Engines</strong></td>
+              <td class="charlo-col"><span class="c-check">✔</span> Yes (Binary, Web, QA, Perf)</td>
+              <td><span class="c-cross">✖</span> DAST Web Only</td>
+              <td><span class="c-cross">✖</span> SAST Static Only</td>
+              <td><span class="c-cross">✖</span> SCA &amp; SAST Only</td>
+            </tr>
+            <tr>
+              <td><strong>Autonomous AST Code Auto-Patcher</strong></td>
+              <td class="charlo-col"><span class="c-check">✔</span> Unified Diffs + Rollback</td>
+              <td><span class="c-cross">✖</span> None</td>
+              <td><span class="c-cross">✖</span> Advisory only</td>
+              <td><span class="c-check">✔</span> Pull Request bot only</td>
+            </tr>
+            <tr>
+              <td><strong>Air-Gapped &amp; 100% Offline Capable</strong></td>
+              <td class="charlo-col"><span class="c-check">✔</span> Complete Privacy</td>
+              <td><span class="c-check">✔</span> Yes</td>
+              <td><span class="c-cross">✖</span> Requires Server Host</td>
+              <td><span class="c-cross">✖</span> Cloud SaaS Required</td>
+            </tr>
+            <tr>
+              <td><strong>Live PoC Exploit &amp; Sandbox Runner</strong></td>
+              <td class="charlo-col"><span class="c-check">✔</span> Real-Time Non-Destructive</td>
+              <td><span class="c-check">✔</span> Manual Request Fuzzer</td>
+              <td><span class="c-cross">✖</span> None</td>
+              <td><span class="c-cross">✖</span> None</td>
+            </tr>
+            <tr>
+              <td><strong>Full-Stack QA Suite (Playwright, WinAppDriver)</strong></td>
+              <td class="charlo-col"><span class="c-check">✔</span> Web, Desktop &amp; Mobile</td>
+              <td><span class="c-cross">✖</span> None</td>
+              <td><span class="c-cross">✖</span> None</td>
+              <td><span class="c-cross">✖</span> None</td>
+            </tr>
+            <tr>
+              <td><strong>Universal OASIS SARIF 2.1.0 Exporter</strong></td>
+              <td class="charlo-col"><span class="c-check">✔</span> Full Schema Compliance</td>
+              <td><span class="c-cross">✖</span> Plugin required</td>
+              <td><span class="c-cross">✖</span> Proprietary JSON</td>
+              <td><span class="c-check">✔</span> Supported</td>
+            </tr>
+            <tr>
+              <td><strong>Pricing &amp; License</strong></td>
+              <td class="charlo-col"><strong style="color: #00ff9d;">100% Free &amp; Open Source</strong></td>
+              <td>Free (OWASP)</td>
+              <td>\$150+/mo per dev</td>
+              <td>Strict Monthly Scan Limits</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Architecture Workflow -->
+    <section class="section-header" style="margin-bottom: 24px;">
+      <div class="section-tag">Execution Pipeline</div>
+      <h2 class="section-title">5-Stage Autonomous Remediation Pipeline</h2>
+      <p class="section-subtitle">
+        How CHARLO processes targets from initial ingestion to verified production-grade patches.
+      </p>
+    </section>
+
+    <div class="arch-grid">
+      <div class="arch-card">
+        <div class="arch-num">01</div>
+        <div class="arch-icon">🎯</div>
+        <h4>Target Ingestion</h4>
+        <p>Accepts live HTTP/HTTPS endpoints, Windows PE .exe binaries, or Android .apk archives.</p>
+      </div>
+
+      <div class="arch-card">
+        <div class="arch-num">02</div>
+        <div class="arch-icon">⚙️</div>
+        <h4>18-Engine Audit</h4>
+        <p>Parallelized heuristics, AST scanning, binary header unpacking, and protocol compliance tests.</p>
+      </div>
+
+      <div class="arch-card">
+        <div class="arch-num">03</div>
+        <div class="arch-icon">⚡</div>
+        <h4>PoC Verification</h4>
+        <p>Non-destructive active probe execution confirming exploitability and eliminating false positives.</p>
+      </div>
+
+      <div class="arch-card">
+        <div class="arch-num">04</div>
+        <div class="arch-icon">✨</div>
+        <h4>Auto-Patch Synthesis</h4>
+        <p>AST code transformation generating unified Git diffs with automatic .bak backup and rollback safety.</p>
+      </div>
+
+      <div class="arch-card">
+        <div class="arch-num">05</div>
+        <div class="arch-icon">📊</div>
+        <h4>Multi-Channel Export</h4>
+        <p>OASIS SARIF 2.1.0 generation, interactive HTML executive reports, and instant SIEM/Slack webhook alerts.</p>
+      </div>
+    </div>
 
     <!-- CLI & Terminal Commands -->
     <section id="cli" class="cli-container">
@@ -980,128 +2162,774 @@
         <div class="section-tag">Developer &amp; CI/CD Integration</div>
         <h2 class="section-title">Headless CLI &amp; Automated Pipeline Commands</h2>
         <p class="section-subtitle">
-          Integrate CHARLO seamlessly into GitHub Actions, GitLab CI, Jenkins, or terminal scripts.
+          Integrate CHARLO into GitHub Actions, GitLab CI, Jenkins, or run automated scans via terminal scripts.
         </p>
       </div>
 
       <div class="code-snippet">
-        <code>python main.py --cli --target "https://example.com" --level advanced --sarif audit.sarif --graphql</code>
-        <button class="copy-btn" onclick="copyCode(this, 'python main.py --cli --target &quot;https://example.com&quot; --level advanced --sarif audit.sarif --graphql')">Copy</button>
+        <code>python main.py --cli --target "https://api.example.com" --level advanced --sarif audit.sarif --graphql</code>
+        <button class="copy-btn" onclick="copySnippet(this, 'python main.py --cli --target &quot;https://api.example.com&quot; --level advanced --sarif audit.sarif --graphql')">Copy</button>
       </div>
 
       <div class="code-snippet">
         <code>python main.py --cli --target "app.apk" --level intermediate --html apk_report.html</code>
-        <button class="copy-btn" onclick="copyCode(this, 'python main.py --cli --target &quot;app.apk&quot; --level intermediate --html apk_report.html')">Copy</button>
+        <button class="copy-btn" onclick="copySnippet(this, 'python main.py --cli --target &quot;app.apk&quot; --level intermediate --html apk_report.html')">Copy</button>
       </div>
 
       <div class="code-snippet">
         <code>python main.py --cli --target "notepad.exe" --bugs --webhook "https://hooks.slack.com/services/..."</code>
-        <button class="copy-btn" onclick="copyCode(this, 'python main.py --cli --target &quot;notepad.exe&quot; --bugs --webhook &quot;https://hooks.slack.com/services/...&quot;')">Copy</button>
+        <button class="copy-btn" onclick="copySnippet(this, 'python main.py --cli --target &quot;notepad.exe&quot; --bugs --webhook &quot;https://hooks.slack.com/services/...&quot;')">Copy</button>
       </div>
     </section>
 
-    <!-- Download & Quickstart -->
-    <section id="download" class="sandbox-container" style="text-align: center;">
-      <div class="section-tag">Get Started in 60 Seconds</div>
-      <h2 class="section-title" style="margin-top: 10px;">Run CHARLO Testing Agent on Windows</h2>
-      <p class="section-subtitle" style="margin-bottom: 30px;">
-        Clone the repository from GitHub and launch the standalone PySide6 Workstation or run in headless CLI mode.
-      </p>
+    <!-- Comprehensive FAQ Accordion -->
+    <section id="faq" class="faq-container">
+      <div class="section-header">
+        <div class="section-tag">Knowledge Base</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Everything you need to know about the CHARLO Testing Agent workstation, engines, and security model.
+        </p>
+      </div>
 
-      <div style="max-width: 680px; margin: 0 auto; text-align: left;">
-        <div class="code-snippet">
-          <code>git clone https://github.com/cbagh0819-ctrl/charlo-testing-agent.git<br>cd charlo-testing-agent<br>pip install -r requirements.txt<br>python main.py</code>
-          <button class="copy-btn" onclick="copyCode(this, 'git clone https://github.com/cbagh0819-ctrl/charlo-testing-agent.git\ncd charlo-testing-agent\npip install -r requirements.txt\npython main.py')">Copy All</button>
+      <div class="faq-item active">
+        <div class="faq-question">
+          <span>How does CHARLO differ from standard web vulnerability scanners?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Standard scanners only look at live web pages. CHARLO is a multi-target workstation that audits Windows PE executables (ASLR, SafeSEH, section entropy), Android APK bytecode (AXML, cryptographic keys), GraphQL/WebSocket endpoints, and full-stack QA automation frameworks (Playwright, Selenium, WinAppDriver). In addition, CHARLO synthesizes unified code patches and exports official OASIS SARIF 2.1.0 reports.
         </div>
       </div>
 
-      <div style="margin-top: 25px;">
-        <a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent" target="_blank" class="btn btn-crimson" style="padding: 12px 28px;">
-          ⭐ Explore on GitHub
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Is my target code or scan data ever transmitted to cloud servers?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          No. CHARLO is engineered with a strict 100% offline, privacy-first architecture. All decompilation, binary analysis, AST parsing, and heuristic verification runs locally on your machine. No telemetry or target data leaves your environment unless you explicitly configure an outgoing webhook URL.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How does the Autonomous Code Auto-Patcher prevent breaking code?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          The Auto-Patcher uses Python Abstract Syntax Trees (AST) and verified pattern transforms rather than unstructured LLM text generation. Before writing any modification, CHARLO automatically creates an immutable <code>.bak</code> timestamped backup file, outputs a standard Unified Git Diff (<code>.patch</code>), and provides a one-click rollback mechanism.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can CHARLO be integrated into GitHub Actions and GitLab CI/CD?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Yes. CHARLO features a headless CLI mode (<code>python main.py --cli ...</code>). When run with <code>--sarif results.sarif</code>, it emits SARIF v2.1.0 output that natively populates GitHub Code Scanning alerts and GitLab Security Dashboards, with configurable quality gate exit codes.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What are the system requirements to run the desktop workstation?</span>
+          <span class="faq-icon">▼</span>
+        </div>
+        <div class="faq-answer">
+          Windows 10/11 (64-bit), Python 3.10 or higher, and 4 GB RAM. PySide6 is used for GPU-accelerated rendering of the Cyber Crimson workstation GUI. Linux and macOS are also fully supported via terminal CLI mode.
+        </div>
+      </div>
+    </section>
+
+    <!-- Download & Quickstart Section -->
+    <section id="download" class="quickstart-container">
+      <div class="section-tag">Get Started in Under 60 Seconds</div>
+      <h2 class="section-title" style="margin-top: 10px;">Deploy CHARLO Workstation on Windows</h2>
+      <p class="section-subtitle" style="margin-bottom: 28px;">
+        Clone the repository from GitHub and launch the standalone PySide6 Workstation or run in headless CI mode.
+      </p>
+
+      <!-- Quickstart Tabs -->
+      <div class="quickstart-tabs">
+        <button class="qs-tab active" data-target="qs-win">Windows 1-Click Launch (.bat)</button>
+        <button class="qs-tab" data-target="qs-git">Git Clone &amp; Python SDK</button>
+        <button class="qs-tab" data-target="qs-ci">GitHub Actions Workflow</button>
+      </div>
+
+      <div style="max-width: 740px; margin: 0 auto; text-align: left;">
+        <div id="qs-win" class="qs-content">
+          <div class="code-snippet">
+            <code>git clone https://github.com/cbagh0819-ctrl/charlo-testing-agent.git<br>cd charlo-testing-agent<br>Launch_CHARLO.bat</code>
+            <button class="copy-btn" onclick="copySnippet(this, 'git clone https://github.com/cbagh0819-ctrl/charlo-testing-agent.git\ncd charlo-testing-agent\nLaunch_CHARLO.bat')">Copy All</button>
+          </div>
+          <p style="font-size: 12.5px; color: #8492a6; margin-top: 8px;">
+            💡 <strong>Pro Tip:</strong> Running <code>Launch_CHARLO.bat</code> auto-installs missing dependencies in an isolated virtual environment and launches the workstation instantly.
+          </p>
+        </div>
+
+        <div id="qs-git" class="qs-content" style="display: none;">
+          <div class="code-snippet">
+            <code>git clone https://github.com/cbagh0819-ctrl/charlo-testing-agent.git<br>cd charlo-testing-agent<br>pip install -r requirements.txt<br>python main.py</code>
+            <button class="copy-btn" onclick="copySnippet(this, 'git clone https://github.com/cbagh0819-ctrl/charlo-testing-agent.git\ncd charlo-testing-agent\npip install -r requirements.txt\npython main.py')">Copy All</button>
+          </div>
+        </div>
+
+        <div id="qs-ci" class="qs-content" style="display: none;">
+          <div class="code-snippet">
+            <code>- name: Run CHARLO Security Gate<br>&nbsp;&nbsp;run: python main.py --cli --target "${{ secrets.TARGET_URL }}" --sarif audit.sarif<br>- name: Upload SARIF to GitHub Code Scanning<br>&nbsp;&nbsp;uses: github/codeql-action/upload-sarif@v3<br>&nbsp;&nbsp;with:<br>&nbsp;&nbsp;&nbsp;&nbsp;sarif_file: audit.sarif</code>
+            <button class="copy-btn" onclick="copySnippet(this, '- name: Run CHARLO Security Gate\n  run: python main.py --cli --target &quot;${{ secrets.TARGET_URL }}&quot; --sarif audit.sarif\n- name: Upload SARIF to GitHub Code Scanning\n  uses: github/codeql-action/upload-sarif@v3\n  with:\n    sarif_file: audit.sarif')">Copy All</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 32px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;">
+        <a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent" target="_blank" rel="noopener noreferrer" class="btn btn-crimson" style="padding: 13px 30px; font-size: 15px;">
+          ⭐ Star &amp; Clone Repository
+        </a>
+        <a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent/archive/refs/heads/main.zip" class="btn btn-outline" style="padding: 13px 26px; font-size: 15px;">
+          ⬇️ Download Source ZIP
         </a>
       </div>
     </section>
   </main>
 
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Toast Notification Pill -->
+  <div class="toast-pill" id="toast-pill">
+    <span>✅</span> <span id="toast-message">Snippet copied to clipboard!</span>
+  </div>
+
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p style="margin-bottom: 8px;">
-        <strong>CHARLO Testing Agent</strong> • Built for <a href="https://github.com/cbagh0819-ctrl" target="_blank">cbagh0819-ctrl</a>
-      </p>
-      <p style="font-size: 11.5px; color: #64748b;">
-        Authorized cybersecurity &amp; automated QA workstation. Certified 100% test pass rate across 133 automated unit tests.
-      </p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">
+              <img src="assets/charlo_icon.png" alt="CHARLO Logo">
+            </div>
+            <div class="brand-text">CHARLO <span>AGENT</span></div>
+          </div>
+          <p>
+            Autonomous AI-Powered Security, QA &amp; Automated Remediation Workstation. Certified 100% test pass rate across 133 automated unit tests.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Core Engines</h5>
+          <ul>
+            <li><a href="#engines">Android APK Decompiler</a></li>
+            <li><a href="#engines">Windows PE Mitigations</a></li>
+            <li><a href="#engines">OWASP Web 100-Check</a></li>
+            <li><a href="#engines">GraphQL &amp; CSWSH</a></li>
+            <li><a href="#engines">Playwright QA Bench</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Features</h5>
+          <ul>
+            <li><a href="#sandbox">Live PoC Sandbox</a></li>
+            <li><a href="#autopatch">AST Code Auto-Patcher</a></li>
+            <li><a href="#comparison">Scanner Benchmark</a></li>
+            <li><a href="#cli">CLI &amp; CI/CD Pipelines</a></li>
+            <li><a href="#faq">Knowledge Base</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Repository</h5>
+          <ul>
+            <li><a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent/issues" target="_blank" rel="noopener noreferrer">Issue Tracker</a></li>
+            <li><a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a></li>
+            <li><a href="https://github.com/cbagh0819-ctrl/charlo-testing-agent/releases" target="_blank" rel="noopener noreferrer">Releases &amp; Changelog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>CHARLO Testing Agent</strong>. Created by <a href="https://github.com/cbagh0819-ctrl" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: none;">cbagh0819-ctrl</a>.
+        </div>
+        <div>
+          OASIS SARIF 2.1.0 Compliant • 100% Privacy-First Architecture • MIT Licensed
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Interactive JavaScript Application -->
   <script>
-    // Interactive PoC Simulator Engine
-    document.getElementById('run-poc-btn').addEventListener('click', function() {
-      const url = document.getElementById('poc-url').value.trim() || 'https://api.pmec.ac.in/v1/search';
-      const probe = document.getElementById('poc-probe').value;
-      const method = document.getElementById('poc-method').value;
-      const terminal = document.getElementById('terminal-output');
+    // --- Mobile Drawer Toggle ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
 
-      terminal.innerHTML = `
-        <span style="color: #ffb800;">[DISPATCHING]</span> ${method} ${url}...<br>
-        <span style="color: #64748b;">Applying non-destructive payload: ${probe.toUpperCase()}...</span>
-      `;
+    function toggleMenu() {
+      menuToggle.classList.toggle('open');
+      mobileDrawer.classList.toggle('active');
+      drawerOverlay.classList.toggle('active');
+      document.body.style.overflow = mobileDrawer.classList.contains('active') ? 'hidden' : '';
+    }
 
-      setTimeout(() => {
-        const latency = (Math.random() * 45 + 18).toFixed(1);
-        let statusBadge = '<span style="color: #ff2a44; font-weight: 800;">[CONFIRMED VULNERABLE]</span>';
-        let detail = '';
-
-        if (probe === 'sqli') {
-          detail = `
-            <span style="color: #00ff9d;">HTTP 500 Internal Server Error</span> (${latency} ms)<br>
-            <span style="color: #64748b;">Server: Apache/2.4.52 (Ubuntu)</span><br>
-            <span style="color: #64748b;">Content-Type: text/html; charset=UTF-8</span><br><br>
-            <span style="color: #ff2a44;">[!] LEAKAGE DETECTED:</span> syntax error in sql near 'SELECT * FROM users WHERE id = ''' at line 1<br>
-            ${statusBadge} Target reflects unparameterized SQL syntax errors directly in response body.
-          `;
-        } else if (probe === 'xss') {
-          detail = `
-            <span style="color: #00ff9d;">HTTP 200 OK</span> (${latency} ms)<br>
-            <span style="color: #64748b;">Content-Type: text/html</span><br><br>
-            <span style="color: #ff2a44;">[!] REFLECTION DETECTED:</span> &lt;charlo_xss_probe&gt; was rendered unescaped.<br>
-            ${statusBadge} Cross-Site Scripting probe payload accepted without HTML entity encoding.
-          `;
-        } else if (probe === 'cswsh') {
-          detail = `
-            <span style="color: #00ff9d;">HTTP 101 Switching Protocols</span> (${latency} ms)<br>
-            <span style="color: #64748b;">Upgrade: websocket | Connection: Upgrade</span><br><br>
-            <span style="color: #ff2a44;">[!] MISSING ORIGIN VALIDATION:</span> Handshake accepted untrusted Origin: https://evil.attacker.local<br>
-            ${statusBadge} WebSocket channel vulnerable to Cross-Site WebSocket Hijacking (CSWSH).
-          `;
-        } else if (probe === 'traversal') {
-          detail = `
-            <span style="color: #00ff9d;">HTTP 403 Forbidden</span> (${latency} ms)<br>
-            <span style="color: #64748b;">WAF Barrier: Cloudflare / ModSecurity Active</span><br><br>
-            <span style="color: #00ff9d; font-weight: 800;">[MITIGATED]</span> Path traversal sequence successfully intercepted and blocked.
-          `;
-        } else {
-          detail = `
-            <span style="color: #00ff9d;">HTTP 200 OK</span> (${latency} ms)<br>
-            <span style="color: #64748b;">Access-Control-Allow-Origin: *</span><br>
-            <span style="color: #64748b;">Access-Control-Allow-Credentials: true</span><br><br>
-            <span style="color: #ff2a44;">[!] INSECURE CORS CONFIG:</span> Wildcard origin configured with Allow-Credentials.<br>
-            ${statusBadge} Sensitive cross-origin authenticated requests permitted.
-          `;
-        }
-
-        terminal.innerHTML = detail;
-      }, 550);
+    menuToggle.addEventListener('click', toggleMenu);
+    drawerOverlay.addEventListener('click', toggleMenu);
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileDrawer.classList.contains('active')) toggleMenu();
+      });
     });
 
-    // Copy to clipboard helper
-    function copyCode(btn, text) {
+    // --- Toast Notification Helper ---
+    function showToast(message) {
+      const toast = document.getElementById('toast-pill');
+      const msg = document.getElementById('toast-message');
+      msg.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    // --- Copy Snippet Helper ---
+    function copySnippet(btn, text) {
       navigator.clipboard.writeText(text).then(() => {
+        showToast('Copied snippet to clipboard!');
         const orig = btn.innerText;
         btn.innerText = 'Copied!';
         setTimeout(() => { btn.innerText = orig; }, 2000);
+      }).catch(() => {
+        showToast('Press Ctrl+C to copy');
       });
     }
+
+    // --- Interactive Screenshot Showcase Gallery ---
+    const showcaseTabs = document.querySelectorAll('.showcase-tab');
+    const showcaseImg = document.getElementById('showcase-img');
+    const showcaseTitle = document.getElementById('showcase-title');
+    const showcaseDesc = document.getElementById('showcase-desc');
+
+    showcaseTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        showcaseTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const imgSrc = tab.getAttribute('data-img');
+        const title = tab.getAttribute('data-title');
+        const desc = tab.getAttribute('data-desc');
+
+        showcaseImg.src = imgSrc;
+        showcaseTitle.textContent = title;
+        showcaseDesc.textContent = desc;
+      });
+    });
+
+    // --- Lightbox Modal Zoom ---
+    const screenshotView = document.getElementById('screenshot-view');
+    const expandModalBtn = document.getElementById('expand-modal-btn');
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox() {
+      lightboxImg.src = showcaseImg.src;
+      lightboxModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightboxModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    screenshotView.addEventListener('click', openLightbox);
+    expandModalBtn.addEventListener('click', openLightbox);
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+
+    // --- Dynamic PoC Simulator Payload & Method Adaptor ---
+    const pocUrlInput = document.getElementById('poc-url');
+    const pocMethodSelect = document.getElementById('poc-method');
+    const pocProbeSelect = document.getElementById('poc-probe');
+    const payloadPreview = document.getElementById('payload-preview');
+    const bodyFieldGroup = document.getElementById('body-field-group');
+    const pocBodyInput = document.getElementById('poc-body');
+    const runPocBtn = document.getElementById('run-poc-btn');
+    const resetPocBtn = document.getElementById('reset-poc-btn');
+    const terminalOutput = document.getElementById('terminal-output');
+
+    const probeSignatures = {
+      sqli: {
+        payload: "' OR 1=1-- charlo_sqli_test",
+        queryKey: "search",
+        status: 500,
+        statusText: "Internal Server Error",
+        bodyVuln: "Syntax error in SQL statement: SELECT * FROM accounts WHERE search = '' OR 1=1-- charlo_sqli_test' near line 1",
+        headers: "Server: Apache/2.4.52 (Ubuntu)\nX-Powered-By: PHP/8.1.2\nContent-Type: text/html; charset=UTF-8\nConnection: close",
+        remediation: "Replace dynamic SQL string concatenation with prepared parameterized queries (e.g. cursor.execute('SELECT * FROM accounts WHERE search = %s', (search,)))"
+      },
+      xss: {
+        payload: "<charlo_xss_probe autofocus onfocus=alert(1)>",
+        queryKey: "q",
+        status: 200,
+        statusText: "OK",
+        bodyVuln: "<html><body><h3>Search results for: <charlo_xss_probe autofocus onfocus=alert(1)></h3><p>0 records found.</p></body></html>",
+        headers: "Server: nginx/1.22.0\nContent-Type: text/html; charset=UTF-8\nX-XSS-Protection: 0\nContent-Security-Policy: default-src 'self' 'unsafe-inline'",
+        remediation: "Encode all user-supplied input via contextual HTML entity escaping (e.g. html.escape(query)) and enforce a restrictive Content-Security-Policy header."
+      },
+      cswsh: {
+        payload: "Upgrade: websocket | Origin: https://evil.attacker.local",
+        queryKey: "ws",
+        status: 101,
+        statusText: "Switching Protocols",
+        bodyVuln: "HTTP/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=",
+        headers: "Upgrade: websocket\nConnection: Upgrade\nSec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=\nX-Frame-Options: SAMEORIGIN",
+        remediation: "Validate the HTTP Origin header during WebSocket handshake against an explicit server whitelist before completing connection upgrade."
+      },
+      traversal: {
+        payload: "../../../../etc/passwd",
+        queryKey: "file",
+        status: 403,
+        statusText: "Forbidden",
+        bodyVuln: "403 Forbidden: ModSecurity WAF intercepted malicious path traversal pattern (../../). Request blocked by Rule 930110.",
+        headers: "Server: cloudflare\nCF-RAY: 8d2c49a1f2b-IAD\nContent-Type: text/html\nCache-Control: private, max-age=0, no-store",
+        remediation: "Ensure paths are canonicalized using os.path.realpath() and validated against a permitted base directory jail, without relying strictly on WAF heuristics."
+      },
+      cors: {
+        payload: "Origin: https://arbitrary-origin.evil.com",
+        queryKey: "cors",
+        status: 200,
+        statusText: "OK",
+        bodyVuln: "{\"status\": \"authenticated\", \"auth_token\": \"eyJhbGciOi...\", \"user\": \"admin\"}",
+        headers: "Access-Control-Allow-Origin: *\nAccess-Control-Allow-Credentials: true\nAccess-Control-Allow-Methods: GET, POST, OPTIONS\nContent-Type: application/json",
+        remediation: "Never configure Access-Control-Allow-Origin with wildcard '*' when Access-Control-Allow-Credentials is true. Bind to trusted exact origin hosts."
+      },
+      secret: {
+        payload: "GET /actuator/env HTTP/1.1",
+        queryKey: "env",
+        status: 200,
+        statusText: "OK",
+        bodyVuln: "{\"activeProfiles\":[\"prod\"],\"propertySources\":[{\"name\":\"applicationConfig: [classpath:/application.yml]\",\"properties\":{\"SPRING_DATASOURCE_PASSWORD\":{\"value\":\"Pr0d_S3cr3t_2026!\"}}}]}",
+        headers: "Server: Spring-Boot\nContent-Type: application/vnd.spring-boot.actuator.v3+json\nCache-Control: no-cache",
+        remediation: "Disable unauthenticated management endpoints in production. Set management.endpoints.web.exposure.exclude=* in Spring or protect with mTLS/OAuth."
+      }
+    };
+
+    function updatePayloadPreview() {
+      const probeKey = pocProbeSelect.value;
+      const method = pocMethodSelect.value;
+      const data = probeSignatures[probeKey];
+
+      if (method === 'POST' || method === 'PUT') {
+        bodyFieldGroup.style.display = 'flex';
+        payloadPreview.textContent = `Body: {"${data.queryKey}": "${data.payload}"}`;
+      } else {
+        bodyFieldGroup.style.display = 'none';
+        payloadPreview.textContent = `Query: ?${data.queryKey}=${encodeURIComponent(data.payload)}`;
+      }
+    }
+
+    pocProbeSelect.addEventListener('change', updatePayloadPreview);
+    pocMethodSelect.addEventListener('change', updatePayloadPreview);
+    updatePayloadPreview();
+
+    // Cache current simulation state
+    let currentSimResult = null;
+
+    runPocBtn.addEventListener('click', function() {
+      const rawUrl = pocUrlInput.value.trim() || 'https://api.pmec.ac.in/v1/search';
+      const method = pocMethodSelect.value;
+      const probeKey = pocProbeSelect.value;
+      const data = probeSignatures[probeKey];
+
+      runPocBtn.disabled = true;
+      runPocBtn.innerText = '⏳ Probing Target...';
+
+      terminalOutput.innerHTML = `
+<span style="color: #ffb800;">[DISPATCHING]</span> ${method} ${rawUrl}
+<span style="color: #64748b;">Applying non-destructive payload: ${probeKey.toUpperCase()}...</span>
+<span style="color: #64748b;">Initiating TLS handshake and socket telemetry probe...</span>
+      `;
+
+      setTimeout(() => {
+        const latency = (Math.random() * 38 + 16).toFixed(1);
+        const isVuln = data.status !== 403;
+        const statusBadge = isVuln
+          ? '<span style="color: #ff2a44; font-weight: 800;">[VULNERABILITY CONFIRMED]</span>'
+          : '<span style="color: #00ff9d; font-weight: 800;">[PROBE INTERCEPTED / MITIGATED]</span>';
+
+        currentSimResult = {
+          rawUrl,
+          method,
+          data,
+          latency,
+          isVuln,
+          statusBadge
+        };
+
+        renderTerminalTab('log');
+
+        runPocBtn.disabled = false;
+        runPocBtn.innerText = '⚡ Execute Live PoC Probe';
+      }, 550);
+    });
+
+    resetPocBtn.addEventListener('click', function() {
+      currentSimResult = null;
+      terminalOutput.innerHTML = `
+<span style="color: #64748b;">// Console cleared. Ready for dispatch.</span>
+<span style="color: #38bdf8;">[IDLE]</span> Awaiting target dispatch...
+      `;
+    });
+
+    // Terminal Tabs (Log, Response, Headers, Remediation)
+    const termTabs = document.querySelectorAll('.term-tab');
+    termTabs.forEach(t => {
+      t.addEventListener('click', () => {
+        termTabs.forEach(tab => tab.classList.remove('active'));
+        t.classList.add('active');
+        renderTerminalTab(t.getAttribute('data-tab'));
+      });
+    });
+
+    function renderTerminalTab(tabName) {
+      if (!currentSimResult) {
+        terminalOutput.innerHTML = `
+<span style="color: #64748b;">// No probe dispatch recorded yet. Execute a probe to inspect ${tabName}.</span>
+        `;
+        return;
+      }
+
+      const { rawUrl, method, data, latency, isVuln, statusBadge } = currentSimResult;
+
+      if (tabName === 'log') {
+        terminalOutput.innerHTML = `
+<span style="color: #00d4ff;">[TARGET]</span> ${method} ${rawUrl}
+<span style="color: #cbd5e1;">[HTTP STATUS]</span> <strong style="color: ${isVuln ? '#ff2a44' : '#00ff9d'};">${data.status} ${data.statusText}</strong> (${latency} ms)
+<span style="color: #64748b;">[PROBE SIGNATURE]</span> ${data.payload}
+
+${statusBadge}
+<span style="color: #94a3b8;">${data.bodyVuln}</span>
+
+<span style="color: #00ff9d;">[SARIF RULE]</span> CWE-${probeKeyToCwe(pocProbeSelect.value)} • Precision: High • Confidence: 99.4%
+        `;
+      } else if (tabName === 'response') {
+        terminalOutput.innerHTML = `
+<span style="color: #38bdf8;">// RAW HTTP RESPONSE BODY (${data.status} ${data.statusText})</span>
+<span style="color: #e2e8f0;">${escapeHtml(data.bodyVuln)}</span>
+        `;
+      } else if (tabName === 'headers') {
+        terminalOutput.innerHTML = `
+<span style="color: #38bdf8;">// HTTP RESPONSE HEADERS</span>
+<span style="color: #94a3b8;">HTTP/1.1 ${data.status} ${data.statusText}</span>
+<span style="color: #cbd5e1;">${escapeHtml(data.headers)}</span>
+        `;
+      } else if (tabName === 'remediation') {
+        terminalOutput.innerHTML = `
+<span style="color: #00ff9d;">// CHARLO AST REMEDIATION ADVICE</span>
+<span style="color: #f1f5f9; font-weight: 700;">Fix Recommendation:</span>
+<span style="color: #94a3b8;">${data.remediation}</span>
+
+<span style="color: #38bdf8;">// Unified Diff generated in Auto-Patcher tab.</span>
+        `;
+      }
+    }
+
+    function probeKeyToCwe(key) {
+      const map = { sqli: '89', xss: '79', cswsh: '1385', traversal: '22', cors: '942', secret: '798' };
+      return map[key] || '200';
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    // --- 18 Engines Interactive Category Filters & Search ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const engineCards = document.querySelectorAll('.engine-card');
+    const engineSearch = document.getElementById('engine-search');
+    let activeCategory = 'all';
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.getAttribute('data-category');
+        applyEngineFilters();
+      });
+    });
+
+    engineSearch.addEventListener('input', applyEngineFilters);
+
+    function applyEngineFilters() {
+      const query = engineSearch.value.toLowerCase().trim();
+
+      engineCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const keywords = card.getAttribute('data-keywords') || '';
+        const title = card.querySelector('.engine-title').textContent.toLowerCase();
+        const desc = card.querySelector('.engine-desc').textContent.toLowerCase();
+
+        const matchesCat = (activeCategory === 'all' || cat === activeCategory);
+        const matchesQuery = !query || title.includes(query) || desc.includes(query) || keywords.includes(query);
+
+        if (matchesCat && matchesQuery) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // --- Auto-Patcher Diff Studio Flaws & Download .patch ---
+    const diffTabs = document.querySelectorAll('.diff-tab');
+    const diffContent = document.getElementById('diff-content');
+    const diffFilename = document.getElementById('diff-filename');
+    const copyDiffBtn = document.getElementById('copy-diff-btn');
+    const downloadPatchBtn = document.getElementById('download-patch-btn');
+
+    const diffFlawDatabase = {
+      sqli: {
+        filename: 'services/auth_service.py',
+        html: `
+<span class="diff-hdr">diff --git a/services/auth_service.py b/services/auth_service.py</span>
+<span class="diff-hdr">--- a/services/auth_service.py</span>
+<span class="diff-hdr">+++ b/services/auth_service.py</span>
+<span class="diff-ctx">@@ -18,5 +18,6 @@ def authenticate_user(username, password_hash):</span>
+<span class="diff-del">-    query = f"SELECT id, role FROM accounts WHERE user = '{username}' AND pass = '{password_hash}'"</span>
+<span class="diff-del">-    cursor.execute(query)</span>
+<span class="diff-add">+# [CHARLO AUTO-REMEDIATION] Parameterized Prepared Statement Protection</span>
+<span class="diff-add">+    query = "SELECT id, role FROM accounts WHERE user = %s AND pass = %s"</span>
+<span class="diff-add">+    cursor.execute(query, (username, password_hash))</span>
+<span class="diff-ctx">     return cursor.fetchone()</span>
+        `,
+        raw: `diff --git a/services/auth_service.py b/services/auth_service.py
+--- a/services/auth_service.py
++++ b/services/auth_service.py
+@@ -18,5 +18,6 @@ def authenticate_user(username, password_hash):
+-    query = f"SELECT id, role FROM accounts WHERE user = '{username}' AND pass = '{password_hash}'"
+-    cursor.execute(query)
++# [CHARLO AUTO-REMEDIATION] Parameterized Prepared Statement Protection
++    query = "SELECT id, role FROM accounts WHERE user = %s AND pass = %s"
++    cursor.execute(query, (username, password_hash))
+     return cursor.fetchone()`
+      },
+      xss: {
+        filename: 'templates/profile_view.py',
+        html: `
+<span class="diff-hdr">diff --git a/templates/profile_view.py b/templates/profile_view.py</span>
+<span class="diff-hdr">--- a/templates/profile_view.py</span>
+<span class="diff-hdr">+++ b/templates/profile_view.py</span>
+<span class="diff-ctx">@@ -14,4 +14,5 @@ def render_search_header(user_query):</span>
+<span class="diff-del">-    return f"&lt;h2&gt;Results for: {user_query}&lt;/h2&gt;"</span>
+<span class="diff-add">+    import html</span>
+<span class="diff-add">+# [CHARLO AUTO-REMEDIATION] Contextual HTML Entity Escaping Against Stored/Reflected XSS</span>
+<span class="diff-add">+    return f"&lt;h2&gt;Results for: {html.escape(user_query, quote=True)}&lt;/h2&gt;"</span>
+        `,
+        raw: `diff --git a/templates/profile_view.py b/templates/profile_view.py
+--- a/templates/profile_view.py
++++ b/templates/profile_view.py
+@@ -14,4 +14,5 @@ def render_search_header(user_query):
+-    return f"<h2>Results for: {user_query}</h2>"
++    import html
++# [CHARLO AUTO-REMEDIATION] Contextual HTML Entity Escaping Against Stored/Reflected XSS
++    return f"<h2>Results for: {html.escape(user_query, quote=True)}</h2>"`
+      },
+      secret: {
+        filename: 'config/cloud_credentials.py',
+        html: `
+<span class="diff-hdr">diff --git a/config/cloud_credentials.py b/config/cloud_credentials.py</span>
+<span class="diff-hdr">--- a/config/cloud_credentials.py</span>
+<span class="diff-hdr">+++ b/config/cloud_credentials.py</span>
+<span class="diff-ctx">@@ -6,3 +6,5 @@ import os</span>
+<span class="diff-del">-AWS_SECRET_KEY = "AKIAIOSFODNN7EXAMPLE_SECRET_KEY"</span>
+<span class="diff-add">+# [CHARLO AUTO-REMEDIATION] Decouple Hardcoded Secret to Environment Ingestion</span>
+<span class="diff-add">+AWS_SECRET_KEY = os.environ.get("AWS_SECRET_KEY")</span>
+<span class="diff-add">+if not AWS_SECRET_KEY: raise RuntimeError("Missing required AWS_SECRET_KEY in environment")</span>
+        `,
+        raw: `diff --git a/config/cloud_credentials.py b/config/cloud_credentials.py
+--- a/config/cloud_credentials.py
++++ b/config/cloud_credentials.py
+@@ -6,3 +6,5 @@ import os
+-AWS_SECRET_KEY = "AKIAIOSFODNN7EXAMPLE_SECRET_KEY"
++# [CHARLO AUTO-REMEDIATION] Decouple Hardcoded Secret to Environment Ingestion
++AWS_SECRET_KEY = os.environ.get("AWS_SECRET_KEY")
++if not AWS_SECRET_KEY: raise RuntimeError("Missing required AWS_SECRET_KEY in environment")`
+      },
+      csrf: {
+        filename: 'controllers/transfer_controller.py',
+        html: `
+<span class="diff-hdr">diff --git a/controllers/transfer_controller.py b/controllers/transfer_controller.py</span>
+<span class="diff-hdr">--- a/controllers/transfer_controller.py</span>
+<span class="diff-hdr">+++ b/controllers/transfer_controller.py</span>
+<span class="diff-ctx">@@ -22,4 +22,6 @@ def handle_funds_transfer(request):</span>
+<span class="diff-add">+# [CHARLO AUTO-REMEDIATION] Cryptographic CSRF Token Validation</span>
+<span class="diff-add">+    if not hmac.compare_digest(request.headers.get("X-CSRF-Token", ""), session.get("csrf_token", "")):</span>
+<span class="diff-add">+        return abort(403, "CSRF token mismatch")</span>
+<span class="diff-ctx">     process_transfer(request.json)</span>
+        `,
+        raw: `diff --git a/controllers/transfer_controller.py b/controllers/transfer_controller.py
+--- a/controllers/transfer_controller.py
++++ b/controllers/transfer_controller.py
+@@ -22,4 +22,6 @@ def handle_funds_transfer(request):
++# [CHARLO AUTO-REMEDIATION] Cryptographic CSRF Token Validation
++    if not hmac.compare_digest(request.headers.get("X-CSRF-Token", ""), session.get("csrf_token", "")):
++        return abort(403, "CSRF token mismatch")
+     process_transfer(request.json)`
+      },
+      cookie: {
+        filename: 'middleware/session_cookie.py',
+        html: `
+<span class="diff-hdr">diff --git a/middleware/session_cookie.py b/middleware/session_cookie.py</span>
+<span class="diff-hdr">--- a/middleware/session_cookie.py</span>
+<span class="diff-hdr">+++ b/middleware/session_cookie.py</span>
+<span class="diff-ctx">@@ -11,3 +11,4 @@ def set_auth_cookie(response, token):</span>
+<span class="diff-del">-    response.set_cookie("session_id", token)</span>
+<span class="diff-add">+# [CHARLO AUTO-REMEDIATION] Enforce Secure, HttpOnly, and SameSite=Strict Flags</span>
+<span class="diff-add">+    response.set_cookie("session_id", token, secure=True, httponly=True, samesite="Strict")</span>
+        `,
+        raw: `diff --git a/middleware/session_cookie.py b/middleware/session_cookie.py
+--- a/middleware/session_cookie.py
++++ b/middleware/session_cookie.py
+@@ -11,3 +11,4 @@ def set_auth_cookie(response, token):
+-    response.set_cookie("session_id", token)
++# [CHARLO AUTO-REMEDIATION] Enforce Secure, HttpOnly, and SameSite=Strict Flags
++    response.set_cookie("session_id", token, secure=True, httponly=True, samesite="Strict")`
+      },
+      traversal: {
+        filename: 'routes/file_download.py',
+        html: `
+<span class="diff-hdr">diff --git a/routes/file_download.py b/routes/file_download.py</span>
+<span class="diff-hdr">--- a/routes/file_download.py</span>
+<span class="diff-hdr">+++ b/routes/file_download.py</span>
+<span class="diff-ctx">@@ -8,4 +8,7 @@ def fetch_report_file(user_filename):</span>
+<span class="diff-del">-    target_path = os.path.join(SAFE_DIR, user_filename)</span>
+<span class="diff-add">+# [CHARLO AUTO-REMEDIATION] Realpath Jail Enforcement Against Path Traversal</span>
+<span class="diff-add">+    safe_base = os.path.realpath(SAFE_DIR)</span>
+<span class="diff-add">+    target_path = os.path.realpath(os.path.join(safe_base, os.path.basename(user_filename)))</span>
+<span class="diff-add">+    if not target_path.startswith(safe_base): raise PermissionError("Invalid path traversal detected")</span>
+        `,
+        raw: `diff --git a/routes/file_download.py b/routes/file_download.py
+--- a/routes/file_download.py
++++ b/routes/file_download.py
+@@ -8,4 +8,7 @@ def fetch_report_file(user_filename):
+-    target_path = os.path.join(SAFE_DIR, user_filename)
++# [CHARLO AUTO-REMEDIATION] Realpath Jail Enforcement Against Path Traversal
++    safe_base = os.path.realpath(SAFE_DIR)
++    target_path = os.path.realpath(os.path.join(safe_base, os.path.basename(user_filename)))
++    if not target_path.startswith(safe_base): raise PermissionError("Invalid path traversal detected")`
+      }
+    };
+
+    let currentActiveFlaw = 'sqli';
+
+    diffTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        diffTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentActiveFlaw = tab.getAttribute('data-flaw');
+        const flawData = diffFlawDatabase[currentActiveFlaw];
+        diffFilename.textContent = flawData.filename;
+        diffContent.innerHTML = flawData.html;
+      });
+    });
+
+    copyDiffBtn.addEventListener('click', () => {
+      const flawData = diffFlawDatabase[currentActiveFlaw];
+      navigator.clipboard.writeText(flawData.raw.trim()).then(() => {
+        showToast(`Copied ${flawData.filename} patch diff!`);
+      });
+    });
+
+    downloadPatchBtn.addEventListener('click', () => {
+      const flawData = diffFlawDatabase[currentActiveFlaw];
+      const blob = new Blob([flawData.raw.trim()], { type: 'text/x-patch' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${currentActiveFlaw}_remediation.patch`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(`Downloaded ${currentActiveFlaw}_remediation.patch!`);
+    });
+
+    // --- Quickstart Tabs Switcher ---
+    const qsTabs = document.querySelectorAll('.qs-tab');
+    const qsContents = document.querySelectorAll('.qs-content');
+
+    qsTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        qsTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const targetId = tab.getAttribute('data-target');
+
+        qsContents.forEach(c => {
+          c.style.display = (c.id === targetId) ? 'block' : 'none';
+        });
+      });
+    });
+
+    // --- FAQ Accordion Interactive Toggles ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        const wasActive = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!wasActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // --- Back to Top Floating Button & Active ScrollSpy ---
+    const backToTopBtn = document.getElementById('back-to-top');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+    const spySections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+
+      // ScrollSpy
+      let currentSectionId = '';
+      spySections.forEach(section => {
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
+        if (window.scrollY >= top && window.scrollY < top + height) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      navAnchors.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === `#${currentSectionId}`) {
+          a.classList.add('active');
+        }
+      });
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
