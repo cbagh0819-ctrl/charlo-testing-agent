@@ -1,18 +1,50 @@
 # CHARLO Testing Agent
 ## Autonomous AI-Powered Security, QA & Automated Remediation Workstation
 
-[![Live Website](https://img.shields.io/badge/Live_Site-GitHub_Pages-ff2a44?style=for-the-badge&logo=github)](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)
-[![Tests](https://img.shields.io/badge/Unit_Tests-133%20Passed%20(100%25)-00ff9d?style=for-the-badge&logo=pytest)](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)
-[![SARIF](https://img.shields.io/badge/SARIF-OASIS%20v2.1.0-00d4ff?style=for-the-badge)](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20Android-a855f7?style=for-the-badge)](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)
-[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+<p align="center">
+  <a href="https://cbagh0819-ctrl.github.io/charlo-testing-agent/">
+    <img src="https://img.shields.io/badge/🌐%20OFFICIAL%20LIVE%20WEBSITE-cbagh0819--ctrl.github.io%2Fcharlo--testing--agent-ff2a44?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Website" />
+  </a>
+</p>
 
-> 🌐 **Official Live Product Website**: [https://cbagh0819-ctrl.github.io/charlo-testing-agent/](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)  
-> Includes interactive live PoC exploit sandbox runner, high-resolution workstation tour, 18-engine catalog filter, and auto-patcher diff studio.
+<p align="center">
+  <a href="https://cbagh0819-ctrl.github.io/charlo-testing-agent/"><img src="https://img.shields.io/badge/Live_Site-GitHub_Pages-ff2a44?style=flat-square&logo=github" alt="Live Site"></a>
+  <a href="https://cbagh0819-ctrl.github.io/charlo-testing-agent/"><img src="https://img.shields.io/badge/Unit_Tests-133%20Passed%20(100%25)-00ff9d?style=flat-square&logo=pytest" alt="Unit Tests"></a>
+  <a href="https://cbagh0819-ctrl.github.io/charlo-testing-agent/"><img src="https://img.shields.io/badge/SARIF-OASIS%20v2.1.0-00d4ff?style=flat-square" alt="SARIF Standard"></a>
+  <a href="https://cbagh0819-ctrl.github.io/charlo-testing-agent/"><img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20Android-a855f7?style=flat-square" alt="Platform"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License"></a>
+</p>
+
+> ### 🌐 Official Live Product Website
+> 👉 **[https://cbagh0819-ctrl.github.io/charlo-testing-agent/](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)**  
+> Experience CHARLO Testing Agent online with an **interactive live PoC exploit runner**, high-resolution workstation tour, filterable 18-engine catalog, and autonomous code auto-patcher diff studio.
 
 ---
 
 CHARLO Testing Agent is a professional, authorized cybersecurity analysis workstation for Windows 10/11. It provides multi-target automated security auditing across **Android APK packages**, **Windows PE executables (.exe, .dll)**, and **Web Applications**, backed by an evidence-grounded risk engine, 18 specialized testing engines, AST code auto-patching, and actionable remediation guidance.
+
+---
+
+## 🌐 Live Website & Online Features
+
+Visit **[https://cbagh0819-ctrl.github.io/charlo-testing-agent/](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)** to explore:
+
+1. **⚡ Interactive Live PoC Exploit & Sandbox Runner**:
+   - Dispatch non-destructive probes (SQLi, XSS, CSWSH, Path Traversal, CORS wildcard) against custom target URLs.
+   - Inspect live telemetry logs, response headers, and AST remediation guidance directly in your browser.
+2. **🖥️ High-Resolution Workstation Tour & Lightbox**:
+   - Interactive carousel covering all 7 UI screens (Homepage, Technical Findings & SARIF, Bug Finder & Leaks, QA Test Automation, PoC Sandbox Dialog, AutoPatch Studio, Webhook Watchdog).
+   - Click to zoom full-resolution modal screenshots.
+3. **⚙️ 18 Specialized Engines Catalog with Instant Filter & Search**:
+   - Filter by domain: Binary & Mobile, Web & APIs, QA & Performance, DevSecOps & CI, Remediation & System.
+   - Live search by check name, standards (OWASP, NIST, CWE), or output formats.
+4. **✨ Autonomous Code Auto-Patcher & Unified Git Diff Studio**:
+   - Switch between real-world flaw remediation diffs (SQLi, Stored XSS, Hardcoded Secrets, Missing CSRF Guard, Insecure Cookie Flags, Path Traversal).
+   - One-click **Copy Diff** and dynamic **Download `.patch`** generation.
+5. **📊 Feature Comparison Benchmark**:
+   - Side-by-side matrix comparing CHARLO with OWASP ZAP, SonarQube Developer, and Snyk Free.
+6. **❓ Interactive Knowledge Base & FAQ Accordion**:
+   - Common answers regarding 100% offline privacy, AST safety with `.bak` backups, and CI/CD integration.
 
 ---
 
@@ -152,4 +184,4 @@ The resulting installer `CharloTestingAgent_Setup_v1.0.0.exe` will be located in
 ## 📄 License & Attribution
 - Author: [cbagh0819-ctrl](https://github.com/cbagh0819-ctrl)
 - Licensed under the [MIT License](LICENSE).
-- Live Documentation: [cbagh0819-ctrl.github.io/charlo-testing-agent](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)
+- Official Website: [https://cbagh0819-ctrl.github.io/charlo-testing-agent/](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)
