@@ -185,3 +185,57 @@ The resulting installer `CharloTestingAgent_Setup_v1.0.0.exe` will be located in
 - Author: [cbagh0819-ctrl](https://github.com/cbagh0819-ctrl)
 - Licensed under the [MIT License](LICENSE).
 - Official Website: [https://cbagh0819-ctrl.github.io/charlo-testing-agent/](https://cbagh0819-ctrl.github.io/charlo-testing-agent/)
+
+
+## WORKING PICS
+<img width="959" height="504" alt="Screenshot 2026-10-24 090730" src="https://github.com/user-attachments/assets/23b515bb-2ccb-43ca-98cb-45f5fd594a34" />
+
+
+<img width="959" height="501" alt="Screenshot 2026-10-24 090354" src="https://github.com/user-attachments/assets/39d48b37-9d65-4cbc-afda-a44d588681d6" />
+
+
+<img width="959" height="502" alt="Screenshot 2026-10-24 090413" src="https://github.com/user-attachments/assets/5c0284a9-c7d2-4fc9-a267-a3f298a80aff" />
+
+
+<img width="959" height="503" alt="Screenshot 2026-10-24 090427" src="https://github.com/user-attachments/assets/9485c522-355c-4bf5-9be0-43bab2f90676" />
+
+
+<img width="959" height="503" alt="Screenshot 2026-10-24 090439" src="https://github.com/user-attachments/assets/13084c85-377c-4770-9ccf-07314b45b2cb" />
+
+
+<img width="959" height="504" alt="Screenshot 2026-10-24 090450" src="https://github.com/user-attachments/assets/32fd766c-a108-483b-a65e-343dd311b1a6" />
+
+
+<img width="959" height="503" alt="Screenshot 2026-10-24 090502" src="https://github.com/user-attachments/assets/0ebab54f-c355-4b42-9402-d31cc68b8271" />
+
+
+<img width="959" height="504" alt="Screenshot 2026-10-24 090512" src="https://github.com/user-attachments/assets/6c25a6fe-3d7c-43eb-a42b-71550183699d" />
+
+
+<img width="959" height="503" alt="Screenshot 2026-10-24 090528" src="https://github.com/user-attachments/assets/a6bb738d-0684-4dd5-8d2b-0210f6fb74fb" />
+
+
+<img width="959" height="504" alt="Screenshot 2026-10-24 090537" src="https://github.com/user-attachments/assets/2427c4c2-2a83-4357-8019-37edbd35087e" />
+
+
+<img width="959" height="503" alt="Screenshot 2026-10-24 090549" src="https://github.com/user-attachments/assets/dca31e7f-db10-4d4f-bd12-fe80ee5c5c27" />
+
+
+<img width="959" height="504" alt="Screenshot 2026-10-24 090600" src="https://github.com/user-attachments/assets/feba4dc2-1f2e-43f9-9fe9-18e4cdd98452" />
+
+
+<img width="959" height="504" alt="Screenshot 2026-10-24 090611" src="https://github.com/user-attachments/assets/dba2b4c6-a816-4124-8301-c670781ec4de" />
+
+
+<img width="959" height="502" alt="Screenshot 2026-10-24 090619" src="https://github.com/user-attachments/assets/323d8a75-5594-4ae1-af6a-c729141e0dff" />
+
+
+<img width="959" height="503" alt="Screenshot 2026-10-24 090628" src="https://github.com/user-attachments/assets/fefe496a-2d38-44dd-b0fe-1412e56a659d" />
+
+<img width="959" height="503" alt="Screenshot 2026-10-24 090639" src="https://github.com/user-attachments/assets/7a91c626-4f55-4a68-a357-4f56539d76f7" />
+
+
+<img width="959" height="503" alt="Screenshot 2026-10-24 090650" src="https://github.com/user-attachments/assets/3713fd5e-55e8-4abb-976a-1beb348fa77a" />
+
+
+<img width="959" height="502" alt="Screenshot 2026-10-24 090703" src="https://github.com/user-attachments/assets/f028e384-8c9f-4da2-a15d-3c51b9a9590e" />
